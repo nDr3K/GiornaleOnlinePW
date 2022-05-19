@@ -4,14 +4,10 @@ import java.util.List;
 import it.giornale.model.Article;
 
 public interface ArticleService {
-
-	String EXPRESSION_ONE = "[a-zA-Z0-9אטלעש\\s'.,-]{1,255}";
-	String EXPRESSIONE_TWO = "[a-zA-Z0-9אטלעש\\s'.,:-]{1,}";
 	
 	List<Article> getArticles(String searchBy);
 	void create(Article a);
-	boolean checkData(String...data);
-	Article readArticleById(int id);
 	void update(Article a);
 	void delete(Article a);
+	Article getArticleById(int id);
 }

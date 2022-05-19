@@ -1,5 +1,6 @@
 package it.giornale.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,17 +12,27 @@ import it.giornale.service.ArticleService;
 
 //http://localhost:8080/giornale/articles
 @Controller
-@RequestMapping("/article")
-public class ArticleController {
+@RequestMapping("/articles")
+public class ArticlesController {
 
 	@Autowired
 	private ArticleService articleService;
 	
 	@GetMapping
-	public String getPage(Model model,@RequestParam(name = "id") String id ) 
-	{
-		Article article = articleService.getArticleById(Integer.parseInt(id));
-		model.addAttribute("article", article);
-		return "article";
+	public String getPage(Model model,@RequestParam(name = "SearchText", required = false)String SearchText ) {
+		
+		String searchBy = "";
+		
+		if (SearchText != null && !SearchText.isEmpty()) {
+			searchBy = SearchText;	
+		}
+		
+		model.addAttribute("isArticles", true);
+		model.addAttribute("articles", getArticles(searchBy));
+		return "articles";
+	}
+	
+	private List<Article> getArticles(String searchBy) {
+		return articleService.getArticles(searchBy);
 	}
 }

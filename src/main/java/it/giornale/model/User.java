@@ -1,6 +1,8 @@
 package it.giornale.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
@@ -40,6 +44,15 @@ public class User implements Serializable
 	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable
+		(
+				name = "favorites",
+				joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+				inverseJoinColumns = @JoinColumn(name = "article_id", referencedColumnName = "id")
+		)
+	private List<Article> favorites = new ArrayList<>();
 
 	public int getId() {
 		return id;
