@@ -43,4 +43,10 @@ public class UserDaoImpl implements UserDao
 		manager.merge(u);
 	}
 
+	@Override
+	public void deleteUser(User u) 
+	{
+		manager.remove(manager.merge(u));
+	}
+
 }

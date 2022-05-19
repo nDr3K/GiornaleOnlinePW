@@ -22,6 +22,7 @@ public class UserController
 	@Autowired
 	private UserService userService;
 	
+	//ritorna pagina dell utente loggato
 	@GetMapping
 	public String getPage(@RequestParam("id") String id, Model model)
 	{
@@ -29,6 +30,7 @@ public class UserController
 		return "user-info";
 	}
 	
+	//cambio email/password 
 	@PostMapping
 	public String modifyUser(@Valid @ModelAttribute("user") User user, BindingResult result)
 	{
