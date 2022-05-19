@@ -5,7 +5,7 @@ import it.giornale.model.Article;
 
 public interface ArticleService {
 	
-	List<Article> getArticles(String searchBy);
+	List<Article> readAll();
 	void create(Article a);
 	void update(Article a);
 	void delete(Article a);
