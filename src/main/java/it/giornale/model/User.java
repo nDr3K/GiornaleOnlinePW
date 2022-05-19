@@ -34,8 +34,8 @@ public class User implements Serializable
 	private String username;
 	
 	@Pattern(regexp = "\\b[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,4}\\b", message = "{registration.error.email}")
-	@Column(name = "email", length = 255, nullable = false)
-	private String email;
+	@Column(name = "mail", length = 255, nullable = false)
+	private String mail;
 	
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.!?-_])(?=\\S+$).{8,30}$", message = "{registration.error.password}")
 	@Column(name = "password", length = 255, nullable = false)
@@ -71,11 +71,11 @@ public class User implements Serializable
 	}
 
 	public String getEmail() {
-		return email;
+		return mail;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.mail = email;
 	}
 
 	public String getPassword() {

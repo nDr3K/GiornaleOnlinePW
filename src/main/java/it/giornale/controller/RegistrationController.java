@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.giornale.model.User;
+import it.giornale.service.RoleService;
 import it.giornale.service.UserService;
 
 @Controller
@@ -21,11 +22,15 @@ public class RegistrationController
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private RoleService roleService;
+	
 	//pagina di registrazione
 	@GetMapping
 	public String getPage(Model model)
 	{
 		model.addAttribute("user", new User());
+		model.addAttribute("role", roleService.getRole(1));
 		return "registration";
 	}
 	

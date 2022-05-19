@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.giornale.model.User;
+import it.giornale.service.ArticleService;
 import it.giornale.service.CategoryService;
 import it.giornale.service.UserService;
 
@@ -23,6 +24,9 @@ public class AdminController
 	@Autowired
 	private CategoryService categoryService;
 	
+	@Autowired
+	private ArticleService articleService;
+	
 	//pagina admin per gestire gli utenti
 	@GetMapping
 	public String getPage(@RequestParam("id") String id,Model model)
@@ -33,11 +37,12 @@ public class AdminController
 		
 		model.addAttribute("users", userService.readAll());
 		model.addAttribute("categories", categoryService.readAll());
+		model.addAttribute("articles", articleService.readAll());
 		return "admin";
 	}
 	
 	//cancella utenti
-	@PostMapping
+	@GetMapping("/delete")
 	public String deleteUser(@ModelAttribute("user") User user)
 	{
 		userService.deleteUser(user);
