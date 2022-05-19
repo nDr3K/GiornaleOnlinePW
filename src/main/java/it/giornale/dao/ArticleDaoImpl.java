@@ -1,67 +1,48 @@
 package it.giornale.dao;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import org.springframework.stereotype.Repository;
 import it.giornale.model.Article;
 
+@Repository
 public class ArticleDaoImpl implements ArticleDao {
 
-	@Autowired
-	private JdbcTemplate template;
+	@PersistenceContext
+	private EntityManager manager;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Article> readAll() {
 		
-		String sql = "SELECT * FROM articles";
-		return template.query(sql,articleMapper);
+		return manager.createQuery("SELECT a FROM articles a").getResultList();
 	}
-
+	
 	@Override
+	@Transactional
 	public void create(Article a) {
 		
-		String sql = "INSERT INTO articles (title,author,date,category_id,content,image) VALUES (?,?,?,?,?,?)";
-		template.update(sql,a.getTitle(),a.getAuthor(),a.getDate(),
-				a.getCategory(),a.getContent(),a.getImage());
-		
+		manager.persist(a);		
 	}
 
 	@Override
 	public void update(Article a) {
 
-		String sql = "UPDATE articles SET title =?,author=?,date=?,category_id=?,content=?,image=? WHERE id=?";
-		template.update(sql,a.getTitle(),a.getAuthor(),
-				a.getDate(),a.getCategory(),a.getContent(),a.getImage(),a.getId());	
+		manager.merge(a);	
 	}
 
 	@Override
-	public void delete(int id) {
+	@Transactional
+	public void delete(Article a) {
 		
-		String sql = "DELETE FROM articles WHERE id=?";
-		template.update(sql,id);
+		manager.remove(manager.merge(a));
 	}
 
 	@Override
-	public String readBookTitleById(int id) {
-
-		String sql = "SELECT title FROM articles WHERE id=?";
-		return template.queryForObject(sql,String.class, id);
+	public Article readArticleById(int id) {
+		
+		return manager.find(Article.class, id);
 	}
-	
-	
-	
-	private RowMapper<Article> articleMapper = (resultSet, rowNum) -> {
-		
-		Article a = new Article();
-		
-		a.setId(resultSet.getInt("id"));
-		a.setTitle(resultSet.getString("title"));
-		a.setAuthor(resultSet.getString("author"));
-		a.setDate(resultSet.getDate("date"));
-		a.setCategory(resultSet.getString("category_id"));
-		a.setContent(resultSet.getString("content"));
-		a.setImage(resultSet.getString("image"));
-		return a;
-	};
 }

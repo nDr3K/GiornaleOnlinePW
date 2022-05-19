@@ -56,9 +56,9 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public String readArticleTitleById(int id) {
+	public Article readArticleById(int id) {
 		
-		return articleDao.readBookTitleById(id);
+		return articleDao.readArticleById(id);
 	}
 
 	@Override
@@ -68,9 +68,9 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public void delete(int id) {
+	public void delete(Article a) {
 		
-		articleDao.delete(id);
+		articleDao.delete(a);
 	}
 
 

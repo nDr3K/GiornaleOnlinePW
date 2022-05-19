@@ -11,7 +11,7 @@ public interface ArticleService {
 	List<Article> getArticles(String searchBy);
 	void create(Article a);
 	boolean checkData(String...data);
-	String readArticleTitleById(int id);
+	Article readArticleById(int id);
 	void update(Article a);
-	void delete(int id);
+	void delete(Article a);
 }

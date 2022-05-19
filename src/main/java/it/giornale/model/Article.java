@@ -16,24 +16,23 @@ public class Article {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,]{1,255}", message = "{article.form.error.general}")
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,!?:.-]{1,255}", message = "{article.error.title}")
 	@Column(name = "title", length = 255, nullable = false)
 	private String title;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,]{1,255}", message = "{article.form.error.general}")
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,]{1,255}", message = "{article.error.author}")
 	@Column(name = "author", length = 255, nullable = false)
 	private String author;
 	
-	@Min(value = 200, message = "{artcile.form.error.toolow}")
-	@Max(value = 20200, message = "{article.form.error.toohigh}")
+	
 	@Column(name = "date", nullable = false)
 	private Date date;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,]{1,255}", message = "{article.form.error.general}")
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,]{1,255}", message = "{article.error.category}")
 	@Column(name = "category_id", length = 255, nullable = false)
 	private String category;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,]{1,255}", message = "{article.form.error.general}")
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,-:_!?]{1,}", message = "{article.error.content}")
 	@Column(name = "content", nullable = false)
 	private String content;
 	

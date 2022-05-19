@@ -8,6 +8,6 @@ public interface ArticleDao {
 	List<Article>readAll();
 	void create(Article a);
 	void update(Article a);
-	void delete(int id);
-	String readBookTitleById(int id);
+	void delete(Article a);
+	Article readArticleById(int id);
 }
