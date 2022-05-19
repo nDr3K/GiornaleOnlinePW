@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.giornale.model.User;
+import it.giornale.service.CategoryService;
 import it.giornale.service.UserService;
 
 @Controller
@@ -18,6 +19,9 @@ public class AdminController
 {
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private CategoryService categoryService;
 	
 	//pagina admin per gestire gli utenti
 	@GetMapping
@@ -28,6 +32,7 @@ public class AdminController
 		if (!user.getRole().getRole().equals("admin")) return "redirect:/";
 		
 		model.addAttribute("users", userService.readAll());
+		model.addAttribute("categories", categoryService.readAll());
 		return "admin";
 	}
 	

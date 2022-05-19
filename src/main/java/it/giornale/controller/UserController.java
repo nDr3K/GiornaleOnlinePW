@@ -16,7 +16,7 @@ import it.giornale.model.User;
 import it.giornale.service.UserService;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController 
 {
 	@Autowired
