@@ -40,6 +40,4 @@ public class ArticleServiceImpl implements ArticleService {
 	{
 		return articleDao.readArticleById(id);
 	}
-
-
 }

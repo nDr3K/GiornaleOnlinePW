@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "roles")
@@ -24,6 +25,7 @@ public class Role implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@Pattern(regexp = "[a-zA-Z\\s]{1,255}", message = "{role.error.role}")
 	@Column(name = "role", length = 255, nullable = false)
 	private String role;
 	

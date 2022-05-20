@@ -1,5 +1,6 @@
 package it.giornale.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,9 +19,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 
-public class Article {
+public class Article implements Serializable{
 
 	
+	private static final long serialVersionUID = 8611180358466627769L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -32,6 +35,10 @@ public class Article {
 	@Pattern(regexp = "[a-zA-Zאטלעש\\s']{1,255}", message = "{article.error.author}")
 	@Column(name = "author", length = 255, nullable = false)
 	private String author;
+	
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.abstract}")
+	@Column(name = "abstract",nullable = false)
+	private String abstact;
 	
 	@Column(name = "date", nullable = false)
 	@Temporal(TemporalType.DATE)
@@ -56,6 +63,7 @@ public class Article {
 				joinColumns = @JoinColumn(name = "article_id", referencedColumnName = "id"),
 				inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id")
 		)
+	
 	private List<User> users = new ArrayList<>();
 	
 	
@@ -76,6 +84,12 @@ public class Article {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	public String getAbstact() {
+		return abstact;
+	}
+	public void setAbstact(String abstact) {
+		this.abstact = abstact;
 	}
 	public Date getDate() {
 		return date;
