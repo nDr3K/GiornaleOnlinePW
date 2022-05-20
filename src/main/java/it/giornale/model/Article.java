@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,13 +16,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 
-public class Article implements Serializable{
-
-	
+@Entity
+@Table(name = "articles")
+public class Article implements Serializable
+{	
 	private static final long serialVersionUID = 8611180358466627769L;
 
 	@Id
@@ -36,16 +39,16 @@ public class Article implements Serializable{
 	@Column(name = "author", length = 255, nullable = false)
 	private String author;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.abstract}")
-	@Column(name = "abstract",nullable = false)
-	private String abstact;
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.caption}")
+	@Column(name = "caption",nullable = false)
+	private String caption;
 	
 	@Column(name = "date", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	
 	@ManyToOne(cascade = CascadeType.MERGE)
-	@Column(name = "category_id", nullable = false)
+	@JoinColumn(name = "category_id", referencedColumnName = "id")
 	private Category category;
 	
 	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.content}")
@@ -85,11 +88,11 @@ public class Article implements Serializable{
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public String getAbstact() {
-		return abstact;
+	public String getCaption() {
+		return caption;
 	}
-	public void setAbstact(String abstact) {
-		this.abstact = abstact;
+	public void setCaption(String caption) {
+		this.caption = caption;
 	}
 	public Date getDate() {
 		return date;

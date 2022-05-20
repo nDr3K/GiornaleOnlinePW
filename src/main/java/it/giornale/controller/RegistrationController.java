@@ -38,6 +38,7 @@ public class RegistrationController
 	@PostMapping
 	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result)
 	{
+		user.setRole(roleService.getRole(1));
 		if (result.hasErrors()) return "registration";
 		
 		userService.createUser(user);

@@ -37,7 +37,7 @@
 	 
 	 <definition name="login" extends="baseLayout">
 	    <put-attribute name="title" value="Login" />
-	    <put-attribute name="content" value="/WEB-INF/view/customers.jsp" />
+	    <put-attribute name="content" value="/WEB-INF/view/login.jsp" />
 	 </definition>  
 	 
 	 <definition name="user" extends="baseLayout">

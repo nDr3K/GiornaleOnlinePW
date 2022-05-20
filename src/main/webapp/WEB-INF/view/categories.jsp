@@ -15,8 +15,8 @@
                     
                         <div class="row"> 
                         	
-                        	<div class="col-4"><a href='<spring:url value="/article?id=${id}"/>'>${article.title}</a></div>
-                        	<div class="col-8"><a href='<spring:url value="/article?id=${id}"/>'>${article.abstract}</a></div>
+                        	<div class="col-4"><a href='<spring:url value="/article?id=${article.id}"/>'>${article.title}</a></div>
+                        	<div class="col-8"><a href='<spring:url value="/article?id=${article.id}"/>'>${article.caption}</a></div>
                         </div>	
                         
                         </c:if>

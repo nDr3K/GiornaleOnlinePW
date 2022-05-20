@@ -10,5 +10,5 @@ public interface ArticleService {
 	void update(Article a);
 	void delete(Article a);
 	Article getArticleById(int id);
-	
+	boolean checkData(String title, String author, String caption, String content);
 }

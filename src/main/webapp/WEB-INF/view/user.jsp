@@ -5,7 +5,7 @@
 
 <div class="row mt-4">
 	<div class="col-10 text-center">
-		<h5>Benvenuto ${user.username}</h5>
+		<h5>Benvenuto</h5>
 	</div>
 </div>
 <div class="row">
@@ -20,7 +20,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${users}" var="usesr">
+				<c:forEach items="${users}" var="user">
 					<tr>
 						<td>${user.username}</td>
 						<td>${user.password}</td>

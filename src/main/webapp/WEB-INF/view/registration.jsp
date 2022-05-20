@@ -33,7 +33,6 @@
 					<form:errors path="mail" id="mailError" cssClass="text-danger"/>
 					<div class="row mt-4">
 				<div class="col-12 text-center">
-					<form:input type="hidden" value="${role}" path="role" id="role"/>
 					<input type="submit" value="Registrati" class="btn btn-primary btn-lg">
 				</div>
 			</div>

@@ -17,9 +17,9 @@
                     <c:forEach items="${articles}" var="article">
                     
                         <div class="row"> 
-                        	<div class="col-8"><a href='<spring:url value="/article?id=${id}"/>'>${article.title}</a></div>
-                        	<div class="col-2"><a href='<spring:url value="/articleform?id=${id}"/>'>Modifica</a></div>
-                        	<div class="col-2"><a href='<spring:url value="admin/deletearticle?id=${id}"/>'>Elimina</a></div>
+                        	<div class="col-8"><a href='<spring:url value="/article?id=${article.id}"/>'>${article.title}</a></div>
+                        	<div class="col-2"><a href='<spring:url value="/articleform?id=${article.id}"/>'>Modifica</a></div>
+                        	<div class="col-2"><a href='<spring:url value="admin/deletearticle?id=${article.id}"/>'>Elimina</a></div>
                         	
                         </div>	
                     
@@ -45,8 +45,8 @@
                     
                         <div class="row"> 
                         	<div class="col-8">${category.description}</div>
-                        	<div class="col-2"><a href='<spring:url value="/categoryform?id=${id}"/>'>Modifica</a></div>
-                        	<div class="col-2"><a href='<spring:url value="admin/deletecategory?id=${id}"/>'>Elimina</a></div>
+                        	<div class="col-2"><a href='<spring:url value="/categoryform?id=${category.id}"/>'>Modifica</a></div>
+                        	<div class="col-2"><a href='<spring:url value="admin/deletecategory?id=${category.id}"/>'>Elimina</a></div>
                         	
                         </div>	
                     
@@ -68,9 +68,9 @@
                     <c:forEach items="${users}" var="user">
                     
                         <div class="row"> 
-                        	<div class="col-8"><a href='<spring:url value="/user?id=${id}"/>'>${user.username}</a></div>
-                        	<div class="col-2"><a href='<spring:url value="admin/change?id=${id}"/>'>Cambia Ruolo</a></div>
-                        	<div class="col-2"><a href='<spring:url value="admin/deleteuser?id=${id}"/>'>Elimina</a></div>
+                        	<div class="col-8"><a href='<spring:url value="/user?id=${user.id}"/>'>${user.username}</a></div>
+                        	<div class="col-2"><a href='<spring:url value="admin/change?id=${user.id}"/>'>Cambia Ruolo</a></div>
+                        	<div class="col-2"><a href='<spring:url value="admin/deleteuser?id=${user.id}"/>'>Elimina</a></div>
                         	
                         </div>	
                     

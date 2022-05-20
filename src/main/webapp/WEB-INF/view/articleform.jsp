@@ -7,53 +7,47 @@
 	<div class="col-6">
 		<div class="row">
 			<div class="col-12 text-center">
-				<h5>${mode ? Nuovo Articolo : Aggiorna Articoli}</h5>
+				<h5>articoli robbe</h5>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<form:form method="POST" modelAttribute="article" acceptCharset="ISO-8859-1">
-					<form:errors path="*" cssClass="alert alert-danger" element="div" 
-						id="generalAlert"/>
+				<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1">
 					<div class="row">
 						<div class="col-6">
-							<form:hidden path="id"/>
+							<input type="hidden" value="${id}" name="id"/>
+							<input type="hidden" value="sonounimmagine" name="image"/>
 							<label for="title">Titolo:</label>
-							<form:input path="title" id="title" type="text" 
-								cssClass="form-control" required="required" />
-							<form:errors path="title" id="titleError" cssClass="text-danger"/>
+							<input name="title" id="title" type="text" class="form-control" required="required" />
 						</div>
 						<div class="col-6">
 							<label for="abstract">Didascalia:</label>
-							<form:textarea path="abstract" id="abstract" 
-								cssClass="form-control" rows="2" style="resize:none;" 
-								required="required" />
-							<form:errors path="abstract" id="abstractError" cssClass="text-danger"/>
+							<textarea name="caption" id="caption" 
+								class="form-control" rows="2" style="resize:none;" 
+								required="required" ></textarea>
 						</div>
 						<div class="row">
 						<div class="col-6">
-							<form:select  path="categories">
-							    <form:option value="NONE"> --Seleziona Categoria--</form:option>
-							    <form:options items="${categories.description}"></form:options>
-						    </form:select>
+							<select name="category" id="category">
+								<c:forEach items="${categories}" var="category">
+									<option value="${category.id}"> ${category.description} </option>	
+								</c:forEach>
+							</select>
 						</div>
 
 						<div class="col-6">
 							<label for="author">Autore:</label>
-							<form:input path="author" id="author" type="text" 
-								cssClass="form-control" required="required" />
-							<form:errors path="author" id="authorError" cssClass="text-danger"/>
+							<input name="author" id="author" type="text" 
+								class="form-control" required="required" />
 						</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<label for="description">Descrizione:</label>
-							<form:textarea path="description" id="description" 
-								cssClass="form-control" rows="4" style="resize:none;" 
-								required="required" />
-							<form:errors path="description" id="descriptionError" 
-								cssClass="text-danger"/>
+							<label for="content">Descrizione:</label>
+							<textarea name="content" id="content" 
+								class="form-control" rows="4" style="resize:none;" 
+								required="required" ></textarea>
 						</div>
 					</div>
 					<div class="row">
@@ -62,7 +56,7 @@
 								class="btn btn-primary mt-4">
 						</div>
 					</div>
-				</form:form>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -25,7 +25,7 @@ public class Category implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\\\\\\\s'.,:_!?-]{1,}", message = "{category.error.description}")
+	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{category.error.description}")
 	@Column(name = "description", length = 255, nullable = false)
 	private String description;
 	

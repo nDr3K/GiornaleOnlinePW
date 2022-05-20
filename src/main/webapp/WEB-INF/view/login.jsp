@@ -6,30 +6,45 @@
 
 <div class="row mt-4">
 	<div class="col-12 text-center">
-		<h5>Bentornato! Inserisci le tue credenziali!</h5>
+		<h5>Registrati</h5>
 	</div>
 </div>
 
+<c:if test="${loginSuccess}">
+<div>
+	<div class="alert alert-success alert-dismissible mt-4" role="alert">
+		<span>Accesso eseguito</span>
+		<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+	</div>
+</div>
+</c:if>
+<c:if test="${loginFailure}">
+<div>
+	<div class="alert alert-danger alert-dismissible mt-4" role="alert">
+		<span>Nome utente non esistene o password errata</span>
+		<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+	</div>
+</div>
+</c:if>
+
 <div class="row justify-content-center">
-	<div class="col-6">
-		<form:form method="POST" modelAttribute="user" acceptCharset="ISO-8859-1">
-			<div class="row">
+	<div class="col-4 justify-content-center">
+		<form:form action="login/checkdata"  method="POST" acceptCharset="ISO-8859-1">		
+			<div class="row justify-content-center">
 				<div class="col-6">
-					<label for="username">Username:</label>
-					<form:input path="username" id="username" type="text" cssClass="form-control" 
-						required="required" />
-					<form:errors path="username" id="usernameError" cssClass="text-danger"/>
+					<label for="usernameSp">Nome Utente:</label>
+					<input id="usernameSp" type="text" name="username" class="form-control" required="required" />
 				</div>
+			</div>
+			<div class="row justify-content-center">
 				<div class="col-6">
-					<label for="password">Password:</label>
-					<form:input path="password" id="password" type="password" cssClass="form-control" 
-						required="required" />
-					<form:errors path="password" id="password" cssClass="text-danger"/>
+					<label for="passwordSp">Password:</label>
+					<input id="passwordSp" type="password" name="password" class="form-control" required="required" />
 				</div>
-			</div>	
-					<div class="row mt-4">
-				<div class="col-12 text-center">
-					<input type="submit" value="Accedi" class="btn btn-primary btn-lg">
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-2">
+					<input type="submit" value="Accedi" class="btn btn-primary mt-4">
 				</div>
 			</div>
 		</form:form>

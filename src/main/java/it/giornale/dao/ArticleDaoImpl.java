@@ -17,7 +17,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Override
 	public List<Article> readAll() {
 		
-		return manager.createQuery("SELECT a FROM articles a").getResultList();
+		return manager.createQuery("SELECT a FROM Article a").getResultList();
 	}
 	
 	@Override
@@ -28,6 +28,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 
 	@Override
+	@Transactional
 	public void update(Article a) {
 
 		manager.merge(a);	
