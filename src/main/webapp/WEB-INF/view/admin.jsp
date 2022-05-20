@@ -7,12 +7,12 @@
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        Articoli
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div class="dropdown-item">
-                     <div class="row">
+                    <div class="row">
                      	<div class="col-2 text-end">
         					<a href='<spring:url value="/articleform"/>' class="btn btn-success">Nuovo Articolo</a>
     					</div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
     				</div>
                     <c:forEach items="${articles}" var="article">
                     
