@@ -15,7 +15,13 @@
 
                 <li><a href='<spring:url value="/categories"/>' class="nav-link px-2 text-white"><font style="vertical-align: inherit;">Categorie</font></a></li>
             </ul>
-
+			<div class="card bg-light text-white">
+				  <img src="<c:url value="/static/image/headerimage.png"/>" class="card-img" alt="Header">
+					  <div class="card-img-overlay">
+						    <h2 class="card-title">Benvenuto in O'Giurnal do Profssor</h2>
+						    <h5 class="card-text">Se o'dic iss, è o'ver</h5>
+					  </div>
+			</div>
             <form class="col-10 col-lg-auto mb-3 mb-lg-0 me-lg-4" role="search">
                 <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Ricerca..." aria-label="Ricerca">
             </form>

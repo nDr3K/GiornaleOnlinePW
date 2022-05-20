@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<footer class="footer mt-auto py-3 bg-light container">
-  <div class="container text-center">
-    <span class="text-muted">Copyright 2022 Alphastore</span>
-  </div>
-</footer>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" >
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="text-muted">O'Giurnal do Profssor</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+        </footer>
