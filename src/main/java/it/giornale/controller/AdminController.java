@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ModelAttribute;
+=======
+>>>>>>> 14f62407a91841c7caa18f1eb3183104f0380732
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import it.giornale.model.User;
@@ -40,10 +43,42 @@ public class AdminController
 	}
 	
 	//cancella utenti
-	@GetMapping("/delete")
-	public String deleteUser(@ModelAttribute("user") User user)
+	@GetMapping("/deleteuser")
+	public String deleteUser(@RequestParam("id") String id)
 	{
-		userService.deleteUser(user);
+		userService.deleteUser(userService.readById(Integer.parseInt(id)));
+		return "redirect:/admin";
+	}
+	
+	//cancella categorie
+	@GetMapping("/deletecategory")
+	public String deleteCategory(@RequestParam("id") String id)
+	{
+		categoryService.remove(categoryService.readById(Integer.parseInt(id)));
+		return "redirect:/admin";
+	}
+	
+	//cancella articoli
+	@GetMapping("/deletearticle")
+	public String deleteArticle(@RequestParam("id") String id)
+	{
+		articleService.delete(articleService.getArticleById(Integer.parseInt(id)));
+		return "redirect:/admin";
+	}
+	
+	//cambia ruolo
+	public String changeRole(@RequestParam("id") String id)
+	{
+		User user = userService.readById(Integer.parseInt(id));
+		if (user.getRole().getId() == 1)
+		{
+			user.getRole().setId(2);
+		} 
+		else 
+		{
+			user.getRole().setId(1);
+		}
+		
 		return "redirect:/admin";
 	}
 }

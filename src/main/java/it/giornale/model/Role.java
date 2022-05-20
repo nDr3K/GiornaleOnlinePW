@@ -29,7 +29,7 @@ public class Role implements Serializable
 	@Column(name = "role", length = 255, nullable = false)
 	private String role;
 	
-	@OneToMany(mappedBy = "role", cascade = CascadeType.MERGE, fetch = FetchType.EAGER, orphanRemoval = true)
+	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<User> users = new ArrayList<>();
 
 	public int getId() {

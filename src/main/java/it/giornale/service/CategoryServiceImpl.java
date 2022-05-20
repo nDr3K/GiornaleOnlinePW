@@ -17,6 +17,12 @@ public class CategoryServiceImpl implements CategoryService
 	{
 		categoryDao.create(c);
 	}
+	
+	@Override
+	public void update(Category c) 
+	{
+		categoryDao.update(c);
+	}
 
 	@Override
 	public void remove(Category c) 
@@ -28,6 +34,12 @@ public class CategoryServiceImpl implements CategoryService
 	public List<Category> readAll() 
 	{
 		return categoryDao.readAll();
+	}
+
+	@Override
+	public Category readById(int id) 
+	{
+		return categoryDao.readById(id);
 	}
 
 }
