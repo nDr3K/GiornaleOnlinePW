@@ -41,6 +41,8 @@ public class UserServiceImpl implements UserService
 	@Override
 	public void deleteUser(User u) 
 	{
+		u.getFavorites().clear();
+		modifyUser(u);
 		userDao.deleteUser(u);
 	}
 

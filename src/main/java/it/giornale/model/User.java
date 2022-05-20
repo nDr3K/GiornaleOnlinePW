@@ -70,11 +70,11 @@ public class User implements Serializable
 		this.username = username;
 	}
 
-	public String getEmail() {
+	public String getMail() {
 		return mail;
 	}
 
-	public void setEmail(String email) {
+	public void setMail(String email) {
 		this.mail = email;
 	}
 
@@ -92,6 +92,14 @@ public class User implements Serializable
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public List<Article> getFavorites() {
+		return favorites;
+	}
+
+	public void setFavorites(List<Article> favorites) {
+		this.favorites = favorites;
 	}
 	
 }
