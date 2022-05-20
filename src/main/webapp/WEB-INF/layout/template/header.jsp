@@ -27,8 +27,8 @@
             </form>
 
             <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2"><spring:url value="/login"/>Login</button>
-                <button type="button" class="btn btn-warning"><spring:url value="/registration"/>Iscriviti</button>
+                <a href='<spring:url value="/login"/>' class="btn btn-outline-light me-2">Login</a>
+                <a href='<spring:url value="/registration"/>' class="btn btn-warning">Iscriviti</a>
             </div>
         </div>
     </div>
