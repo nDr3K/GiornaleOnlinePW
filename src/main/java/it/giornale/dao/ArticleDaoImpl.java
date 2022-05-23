@@ -32,7 +32,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Transactional
 	public void update(Article a) {
 
-		manager.merge(a);	
+		manager.merge(a);
 	}
 
 	@Override

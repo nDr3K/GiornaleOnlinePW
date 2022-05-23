@@ -54,8 +54,6 @@
 						<div class="col-6 text-center">
 							<input type="submit" value="Aggiorna Articolo" class="btn btn-primary mt-4">
 						</div>
-						<label for="avatar">Carica un immagine di copertina:</label>
-						<input type="file" id="image" name="image" accept="image/png, image/jpeg">
 					</div>
 				</form>
 			</div>

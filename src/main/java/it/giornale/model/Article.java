@@ -47,14 +47,13 @@ public class Article implements Serializable
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	
-	@ManyToOne(cascade = CascadeType.MERGE)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "category_id", referencedColumnName = "id")
 	private Category category;
 	
 	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.content}")
 	@Column(name = "content", nullable = false)
 	private String content;
-	
 	
 	@Column(name = "image", length = 255, nullable = false)
 	private String image;
