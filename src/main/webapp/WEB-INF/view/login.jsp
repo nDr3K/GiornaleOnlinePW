@@ -6,7 +6,7 @@
 
 <div class="row mt-4">
 	<div class="col-12 text-center">
-		<h5>Registrati</h5>
+		<h5>Accedi</h5>
 	</div>
 </div>
 

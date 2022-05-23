@@ -11,10 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column h-100" style="background-color:#32363a">
     
-    	<div class="container">
+    	<div class="container mw-100">
     		<tiles:insertAttribute name="header"/>
+   		</div>
+   		<div class="container">
         	<tiles:insertAttribute name="content"/>
         </div>        
         <tiles:insertAttribute name="footer"/>
