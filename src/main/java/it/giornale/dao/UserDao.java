@@ -11,4 +11,6 @@ public interface UserDao
 	User readById(int id);
 	void modifyUser(User u);
 	void deleteUser(User u);
+	User readByUsername(String username);
+	boolean mailExist(String mail);
 }

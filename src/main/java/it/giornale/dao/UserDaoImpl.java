@@ -44,9 +44,28 @@ public class UserDaoImpl implements UserDao
 	}
 
 	@Override
+	@Transactional
 	public void deleteUser(User u) 
 	{
 		manager.remove(manager.merge(u));
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public User readByUsername(String username) 
+	{
+		List<User> u = manager.createQuery("SELECT u FROM User u WHERE u.username LIKE :uName").setParameter("uName", username).getResultList();
+		return u.get(0);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean mailExist(String mail) 
+	{
+		List<User> u = manager.createQuery("SELECT u FROM User u WHERE u.mail LIKE :uMail").setParameter("uMail", mail).getResultList();
+		if (u.size() > 0) return true;
+		else return false;
+	
 	}
 
 }

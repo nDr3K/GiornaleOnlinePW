@@ -2,6 +2,7 @@ package it.giornale.service;
 
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,8 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public void delete(Article a) {
-		
+		a.getUsers().clear();
+		update(a);
 		articleDao.delete(a);
 	}
 
@@ -52,8 +54,39 @@ public class ArticleServiceImpl implements ArticleService {
 		if( Pattern.matches("[a-zA-Z-0-9אטלעש\\s'.,!?:-]{1,255}", title) &&
 			Pattern.matches("[a-zA-Zאטלעש\\s']{1,255}", author) &&
 			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", caption) &&
-			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", content)	)
+			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'.,:_!?<>-]{1,}", content)	)
 		return true;
 		return false;
+	}
+
+	@Override
+	public int getNext(int id) 
+	{
+		return articleDao.getNext(id);
+	}
+
+	@Override
+	public int getPrevious(int id) 
+	{
+		return articleDao.getPrevious(id);
+	}
+
+	@Override
+	public List<Article> readLastTen() 
+	{
+		return articleDao.readLastTen();
+	}
+
+	@Override
+	public List<Article> searchByCategory(String category) 
+	{
+		List<Article> list = articleDao.readAll();
+		
+		list = list
+					.stream()
+					.filter(b -> b.getCategory().getDescription().contains(category))
+					.collect(Collectors.toList());
+		
+		return list;
 	}
 }

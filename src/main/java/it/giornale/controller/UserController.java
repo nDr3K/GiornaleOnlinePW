@@ -1,5 +1,6 @@
 package it.giornale.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,17 +27,26 @@ public class UserController
 	@GetMapping
 	public String getPage(@RequestParam("id") String id, Model model)
 	{
-		model.addAttribute("user", userService.readById(Integer.parseInt(id)));
-		return "user-info";
+		User user = userService.readById(Integer.parseInt(id));
+		model.addAttribute("user", user);
+		model.addAttribute("articles", user.getFavorites());
+		return "user";
 	}
 	
 	//cambio email/password 
 	@PostMapping
 	public String modifyUser(@Valid @ModelAttribute("user") User user, BindingResult result)
 	{
-		if (result.hasErrors()) return "user-info";
+		if (result.hasErrors()) return "user";
 		
 		userService.modifyUser(user);
-		return "redirect:/user-info";
+		return "redirect:/user";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(@RequestParam("id") String id, HttpSession session)
+	{
+		session.removeAttribute("user");
+		return "redirect:/";
 	}
 }

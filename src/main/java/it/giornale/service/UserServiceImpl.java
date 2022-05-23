@@ -42,8 +42,34 @@ public class UserServiceImpl implements UserService
 	public void deleteUser(User u) 
 	{
 		u.getFavorites().clear();
+		u.setRole(null);
 		modifyUser(u);
 		userDao.deleteUser(u);
+	}
+
+	@Override
+	public User readByUsername(String username) 
+	{
+		return userDao.readByUsername(username);
+	}
+
+	@Override
+	public boolean usernameExist(String username) 
+	{
+		try 
+		{
+			readByUsername(username);
+			return true;
+		} catch (Exception e) 
+		{
+			return false;
+		}
+	}
+
+	@Override
+	public boolean mailExist(String mail) 
+	{
+		return userDao.mailExist(mail);
 	}
 
 }

@@ -18,43 +18,44 @@
 							<input type="hidden" value="${id}" name="id"/>
 							<input type="hidden" value="sonounimmagine" name="image"/>
 							<label for="title">Titolo:</label>
-							<input name="title" id="title" type="text" class="form-control" required="required" />
+							<input name="title" id="title" type="text" class="form-control" required="required" value="${id > 0 ? article.title : ''}"/>
 						</div>
 						<div class="col-6">
 							<label for="abstract">Didascalia:</label>
-							<textarea name="caption" id="caption" 
-								class="form-control" rows="2" style="resize:none;" 
-								required="required" ></textarea>
+							<textarea name="caption" id="caption" class="form-control" rows="3" style="resize:none;" required="required">${id > 0 ? article.caption : ''}</textarea>
 						</div>
 						<div class="row">
 						<div class="col-6">
 							<select name="category" id="category">
 								<c:forEach items="${categories}" var="category">
-									<option value="${category.id}"> ${category.description} </option>	
+									<c:if test="${category.id == article.category.id}">
+										<option value="${category.id}" selected> ${category.description} </option>
+									</c:if>
+									<c:if test="${category.id != article.category.id}">
+										<option value="${category.id}"> ${category.description} </option>
+									</c:if>	
 								</c:forEach>
 							</select>
 						</div>
 
 						<div class="col-6">
 							<label for="author">Autore:</label>
-							<input name="author" id="author" type="text" 
-								class="form-control" required="required" />
+							<input name="author" id="author" type="text" class="form-control" required="required" value="${id > 0 ? article.author : ''}"/>
 						</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<label for="content">Descrizione:</label>
-							<textarea name="content" id="content" 
-								class="form-control" rows="4" style="resize:none;" 
-								required="required" ></textarea>
+							<textarea name="content" id="content" class="form-control" rows="12" style="resize:none;" required="required">${id > 0 ? article.content : ''}</textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6 text-center">
-							<input type="submit" value="Aggiorna Articolo" 
-								class="btn btn-primary mt-4">
+							<input type="submit" value="Aggiorna Articolo" class="btn btn-primary mt-4">
 						</div>
+						<label for="avatar">Carica un immagine di copertina:</label>
+						<input type="file" id="image" name="image" accept="image/png, image/jpeg">
 					</div>
 				</form>
 			</div>

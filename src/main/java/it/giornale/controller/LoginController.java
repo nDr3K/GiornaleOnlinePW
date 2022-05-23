@@ -1,5 +1,7 @@
 package it.giornale.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,19 +33,29 @@ public class LoginController {
 	 
 	 @PostMapping("/checkdata")
 	 public String checkValidUser(@RequestParam("username") String username,
-			 					  @RequestParam("password") String password)
+			 					  @RequestParam("password") String password,
+			 					  HttpSession session)
 	 {
-		 for (User u : userService.readAll())
-		 {
-			 if (u.getUsername().equals(username) && u.getPassword().equals(password))
+		User u;
+	 	try 
+		{
+			 u = userService.readByUsername(username);
+		} catch (Exception e) 
+	 	{
+			loginFailure = true;
+			loginSuccess = false;
+			return "redirect:/login";
+		}
+		 
+			 if (u.getPassword().equals(password))
 			 {
 				loginSuccess = true;
 				loginFailure = false;
+				session.setAttribute("user", u);
 			 } else {
 				loginFailure = true;
 				loginSuccess = false;
 			}
-		 }
 		 return "redirect:/login";
 	 }
 

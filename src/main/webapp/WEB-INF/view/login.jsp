@@ -21,7 +21,7 @@
 <c:if test="${loginFailure}">
 <div>
 	<div class="alert alert-danger alert-dismissible mt-4" role="alert">
-		<span>Nome utente non esistene o password errata</span>
+		<span>Nome utente non esistente o password errata</span>
 		<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
 	</div>
 </div>

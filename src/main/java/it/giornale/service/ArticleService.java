@@ -11,4 +11,8 @@ public interface ArticleService {
 	void delete(Article a);
 	Article getArticleById(int id);
 	boolean checkData(String title, String author, String caption, String content);
+	int getNext(int id);
+	int getPrevious(int id);
+	List<Article> readLastTen();
+	List<Article> searchByCategory(String category);
 }

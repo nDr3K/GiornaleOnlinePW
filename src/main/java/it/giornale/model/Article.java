@@ -59,14 +59,13 @@ public class Article implements Serializable
 	@Column(name = "image", length = 255, nullable = false)
 	private String image;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable
 		(
 				name = "favorites",
 				joinColumns = @JoinColumn(name = "article_id", referencedColumnName = "id"),
 				inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id")
 		)
-	
 	private List<User> users = new ArrayList<>();
 	
 	
@@ -117,5 +116,11 @@ public class Article implements Serializable
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}	
 }

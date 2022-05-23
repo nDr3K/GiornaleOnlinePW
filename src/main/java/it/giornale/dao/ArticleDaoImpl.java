@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Repository;
 import it.giornale.model.Article;
 
@@ -45,5 +46,36 @@ public class ArticleDaoImpl implements ArticleDao {
 	public Article readArticleById(int id) {
 		
 		return manager.find(Article.class, id);
+	}
+
+	@Override
+	public int getNext(int id)
+	{
+		int n = id;
+		try 
+		{
+			n = (int) manager.createNativeQuery("CALL next("+id+")").getResultList().get(0);
+		} catch (Exception e) {}
+		return n;
+	}
+
+	@Override
+	public int getPrevious(int id)
+	{
+		int n = id;
+		try 
+		{
+			n = (int) manager.createNativeQuery("CALL previous("+id+")").getResultList().get(0);
+		} catch (Exception e) 
+		{}
+		return n;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Article> readLastTen() 
+	{
+		//return manager.createNativeQuery("SELECT * FROM lastarticles").getResultList();
+		return manager.createQuery("SELECT a FROM Article a ORDER BY a.date desc").setMaxResults(10).getResultList();
 	}
 }

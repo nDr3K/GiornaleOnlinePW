@@ -45,7 +45,7 @@ public class User implements Serializable
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable
 		(
 				name = "favorites",
@@ -102,4 +102,12 @@ public class User implements Serializable
 		this.favorites = favorites;
 	}
 	
+	public void addFavorite(Article article) {
+		this.favorites.add(article);
+	}
+	
+	public void removeFavorite(Article article) {
+		this.favorites.remove(article);
+		article.getUsers().remove(this);
+	}
 }

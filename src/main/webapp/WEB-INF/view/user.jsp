@@ -20,7 +20,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${users}" var="user">
 					<tr>
 						<td>${user.username}</td>
 						<td>${user.password}</td>
@@ -36,8 +35,10 @@
 							</a>
 						</td>
 					</tr>
-				</c:forEach>
 			</tbody>
 		</table>
+		<c:forEach items="${articles}" var="article">
+		<span>${article.title}</span><br>
+		</c:forEach>
 	</div>
 </div>

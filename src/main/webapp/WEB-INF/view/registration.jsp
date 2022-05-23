@@ -17,6 +17,9 @@
 					<form:input path="username" id="username" type="text" cssClass="form-control" 
 						required="required" />
 					<form:errors path="username" id="usernameError" cssClass="text-danger"/>
+					<c:if test="${userExist}">
+						<span>Nome utente gia preso</span>
+					</c:if>
 				</div>
 				<div class="col-6">
 					<label for="password">Password:</label>
@@ -31,6 +34,9 @@
 					<form:input path="mail" id="mail" type="mail" cssClass="form-control" 
 						required="required" />
 					<form:errors path="mail" id="mailError" cssClass="text-danger"/>
+					<c:if test="${mailExist}">
+						<span>Mail gia registrata</span>
+					</c:if>
 					<div class="row mt-4">
 				<div class="col-12 text-center">
 					<input type="submit" value="Registrati" class="btn btn-primary btn-lg">

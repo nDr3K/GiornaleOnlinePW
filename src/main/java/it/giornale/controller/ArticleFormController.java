@@ -28,7 +28,7 @@ public class ArticleFormController {
 	private boolean mode =  false;
 	
 	@GetMapping
-	public String getPage(@RequestParam("id") String id, Model model) {
+	public String getPage(@RequestParam(name = "id", required = false) String id, Model model) {
 		
 		Article article;
 		
@@ -40,7 +40,7 @@ public class ArticleFormController {
 			article = articleService.getArticleById(Integer.parseInt(id));
 		}
 		
-		model.addAttribute("id", id);
+		model.addAttribute("id", Integer.parseInt(id));
 		model.addAttribute("categories", categoryService.readAll());
 		model.addAttribute("article", article);
 		model.addAttribute("mode", mode);
@@ -49,7 +49,7 @@ public class ArticleFormController {
 	
 	
 	@PostMapping("/savearticle")
-	public String articleCreate(@RequestParam("id") String id,
+	public String articleCreate(@RequestParam("id") int id,
 								@RequestParam("title") String title,
 								@RequestParam("author") String author,
 								@RequestParam("category") String category,
@@ -59,12 +59,12 @@ public class ArticleFormController {
 		
 		Article article;
 		Category c = categoryService.readById(Integer.parseInt(category));
-		if (id.equals("0")) 
+		if (id == 0) 
 		{
 			article = new Article();
 			article.setDate(new Date());
 		}
-		else article = articleService.getArticleById(Integer.parseInt(id));
+		else article = articleService.getArticleById(id);
 		
 		article.setCategory(c);
 		article.setImage(image);
@@ -77,7 +77,7 @@ public class ArticleFormController {
 		}
 		else 
 		{
-			return "redirect:/articleform";
+			return "redirect:/articleform?id?="+id;
 		}
 		
 		 if (mode) {

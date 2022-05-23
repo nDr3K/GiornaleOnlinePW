@@ -5,7 +5,7 @@
 	<div class="col-6">
 		<div class="row">
 			<div class="col-12 text-center">
-				<h5>${mode ? Crea Categoria : Modifica Categoria}</h5>
+				<h5>${mode ? 'Crea Categoria' : 'Modifica Categoria'}</h5>
 			</div>
 		</div>
 		<div class="row">
@@ -21,8 +21,7 @@
 								cssClass="form-control" required="required" />
 							<form:errors path="description" id="descriptionError" cssClass="text-danger"/>
 						<div class="col-4">
-							<input type="submit" value='${mode ? Aggiungi Categoria : Modifica Categoria}'
-								class="btn btn-primary mt-4">
+							<input type="submit" value='${mode ? "Aggiungi Categoria" : "Modifica Categoria"}' class="btn btn-primary mt-4">
 						</div>
 						</div>
 					</div>	

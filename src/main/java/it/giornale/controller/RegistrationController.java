@@ -25,10 +25,17 @@ public class RegistrationController
 	@Autowired
 	private RoleService roleService;
 	
+	private boolean userExist;
+	private boolean mailExist;
+	
 	//pagina di registrazione
 	@GetMapping
 	public String getPage(Model model)
 	{
+		userExist = false;
+		mailExist = false;
+		model.addAttribute("userExist", userExist);
+		model.addAttribute("mailExist", mailExist);
 		model.addAttribute("user", new User());
 		model.addAttribute("role", roleService.getRole(1));
 		return "registration";
@@ -36,10 +43,25 @@ public class RegistrationController
 	
 	//registrazione effettiva
 	@PostMapping
-	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result)
+	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model)
 	{
+		userExist = false;
+		mailExist = false;
 		user.setRole(roleService.getRole(1));
 		if (result.hasErrors()) return "registration";
+		if (userService.usernameExist(user.getUsername())) 
+		{
+			userExist = true;
+			model.addAttribute("userExist", userExist);
+			return "registration";
+		} 
+		
+		if (userService.mailExist(user.getMail())) 
+		{
+			mailExist = true;
+			model.addAttribute("mailExist", mailExist);
+			return "registration";
+		} 
 		
 		userService.createUser(user);
 		return "redirect:/";

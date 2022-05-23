@@ -1,5 +1,7 @@
 package it.giornale.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.giornale.model.User;
 import it.giornale.service.ArticleService;
 import it.giornale.service.CategoryService;
+import it.giornale.service.RoleService;
 import it.giornale.service.UserService;
 
 @Controller
@@ -24,13 +27,16 @@ public class AdminController
 	@Autowired
 	private ArticleService articleService;
 	
+	@Autowired
+	private RoleService roleService;
+	
 	//pagina admin per gestire gli utenti
 	@GetMapping
-	public String getPage(@RequestParam("id") String id,Model model)
+	public String getPage(HttpSession session,Model model)
 	{
-		User user = userService.readById(Integer.parseInt(id));
+		User user = (User) session.getAttribute("user");
 		
-		if (!user.getRole().getRole().equals("admin")) return "redirect:/";
+		if (!(user.getRole().getId() == 2)) return "redirect:/";
 		
 		model.addAttribute("users", userService.readAll());
 		model.addAttribute("categories", categoryService.readAll());
@@ -63,17 +69,19 @@ public class AdminController
 	}
 	
 	//cambia ruolo
+	@GetMapping("/change")
 	public String changeRole(@RequestParam("id") String id)
 	{
 		User user = userService.readById(Integer.parseInt(id));
 		if (user.getRole().getId() == 1)
 		{
-			user.getRole().setId(2);
+			user.setRole(roleService.getRole(2));
 		} 
 		else 
 		{
-			user.getRole().setId(1);
+			user.setRole(roleService.getRole(1));
 		}
+		userService.modifyUser(user);
 		
 		return "redirect:/admin";
 	}
