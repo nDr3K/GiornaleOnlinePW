@@ -36,13 +36,16 @@ public class ArticleController {
 		List<Article> suggesteds = articleService.searchByCategory(article.getCategory().getDescription());
 		
 		favorite = false;
-		for (Article a : user.getFavorites())
+		if (user != null)
 		{
-			favorite = false;
-			if (a.getId() == Integer.parseInt(id))
+			for (Article a : user.getFavorites())
 			{
-				favorite = true;
-				break;
+				favorite = false;
+				if (a.getId() == Integer.parseInt(id))
+				{
+					favorite = true;
+					break;
+				}
 			}
 		}
 			
