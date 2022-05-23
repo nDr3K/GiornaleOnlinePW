@@ -17,10 +17,10 @@
 			<c:if test="${sessionScope.user != null}">
 				<c:choose>
 					<c:when test="${favorite}">
-						<a href='<spring:url value="/article/remove?id=${article.id}"/>'>togli dai preferiti</a>
+						<a href='<spring:url value="/article/remove?id=${article.id}"/>'>Rimuovi dai preferiti</a>
 					</c:when>
 					<c:otherwise>
-						<a href='<spring:url value="/article/add?id=${article.id}"/>'>aggiungi ai preferiti</a>
+						<a href='<spring:url value="/article/add?id=${article.id}"/>'>Aggiungi ai preferiti</a>
 					</c:otherwise>
 				</c:choose>
 			</c:if>

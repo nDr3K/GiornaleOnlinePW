@@ -10,7 +10,7 @@
 <div class="card mb-3 bg-light" style="max-width: 100%; margin: 20px; max-height: 300px; text-align: center" >
     <div class="row g-0">
     	<div class="col-md-4" >
-        	<img class="img-fluid rounded-start" alt="Article Image" src="<c:url value="${article.image}" />">
+        	<img class="img-fluid rounded-start" alt="Article Image" style="max-height: 300px; max-width: 450px;" src="<c:url value="${article.image}" />">
         </div>
         <div class="col-md-8"align="center">
             <div class="card-body">
