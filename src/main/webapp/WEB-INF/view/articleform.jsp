@@ -12,7 +12,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1">
+				<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-6">
 							<input type="hidden" value="${id}" name="id"/>
@@ -52,6 +52,8 @@
 					</div>
 					<div class="row">
 						<div class="col-6 text-center">
+							<label for="imagge">Inserisci immagine</label>
+							<input type="file" class="form-control mt-2" id="imagge" name="imagge">
 							<input type="submit" value="Aggiorna Articolo" class="btn btn-primary mt-4">
 						</div>
 					</div>

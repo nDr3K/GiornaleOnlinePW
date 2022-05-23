@@ -1,6 +1,11 @@
 package it.giornale.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 import it.giornale.model.Article;
 import it.giornale.model.Category;
 import it.giornale.service.ArticleService;
@@ -53,7 +60,9 @@ public class ArticleFormController {
 								@RequestParam("category") String category,
 								@RequestParam("caption") String caption,
 								@RequestParam("content") String content,
-								@RequestParam("image") String image
+								@RequestParam("image") String image,
+								@RequestParam("imagge") MultipartFile imagge,
+								HttpSession session
 								) 
 	{
 		
@@ -86,6 +95,30 @@ public class ArticleFormController {
 		 } else 
 		 	 articleService.update(article);
 	
+		 
+		 //gestione immagini
+		 String fileName = String.valueOf(article.getId());
+		 System.out.println(fileName);
+		 if (imagge != null && !imagge.isEmpty())
+			{
+				String rootDir = session.getServletContext().getRealPath("/");
+				String filePath = rootDir + "static\\articles\\" + fileName + ".png";
+				System.out.println(filePath);
+				try 
+				{
+					imagge.transferTo(new File(filePath));
+					article.setImage("static\\articles\\" + fileName + ".png");
+					articleService.update(article);
+				} 
+				catch (IllegalStateException e) 
+				{
+					e.printStackTrace();
+				} 
+				catch (IOException e) 
+				{
+					e.printStackTrace();
+				}
+			}
 		 
 		 return "redirect:/admin";
 	}
