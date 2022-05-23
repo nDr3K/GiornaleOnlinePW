@@ -1,7 +1,6 @@
 package it.giornale.controller;
 
 import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import it.giornale.model.Article;
 import it.giornale.model.Category;
 import it.giornale.service.ArticleService;
@@ -55,7 +53,9 @@ public class ArticleFormController {
 								@RequestParam("category") String category,
 								@RequestParam("caption") String caption,
 								@RequestParam("content") String content,
-								@RequestParam("image") String image) {
+								@RequestParam("image") String image
+								) 
+	{
 		
 		Article article;
 		Category c = categoryService.readById(Integer.parseInt(category));
@@ -68,6 +68,7 @@ public class ArticleFormController {
 		
 		article.setCategory(c);
 		article.setImage(image);
+		
 		if(articleService.checkData(title,author,caption,content))
 		{
 			article.setTitle(title);
@@ -84,7 +85,8 @@ public class ArticleFormController {
 			 articleService.create(article);
 		 } else 
 		 	 articleService.update(article);
-		
+	
+		 
 		 return "redirect:/admin";
 	}
 }
