@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!-- NAVBAR -->
 
+
 	<div class="d-flex justify-content-center bg-dark">
         <img src="static/image/sparvierodark.png"/>
     </div>
@@ -18,7 +19,7 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
     
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li class="nav-item">
+		<li>
           <a class="nav-link" href='<spring:url value="/"/>'>Home</a>
         </li>
         <li class="nav-item">
@@ -56,6 +57,3 @@
   </div>
 </nav>
 <!-- CARDS IMAGE OVERLAY -->
-<div>
-	<span>PORCODDIO</span>
-</div>
