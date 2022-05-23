@@ -45,11 +45,11 @@
 				   	<i class="fa-regular fa-circle-user"></i>
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="nav-link" href='<spring:url value="/user?id=${sessionScope.user.id}"/>'>Gestione Account</a>
+				    <a class="dropdown-item" href='<spring:url value="/user?id=${sessionScope.user.id}"/>'>Gestione Account</a>
 				    <c:if test="${sessionScope.user.role.id == 2}">
-		         		<a class="nav-link" href='<spring:url value="/admin?id=${sessionScope.user.id}"/>'>Pannello Admin</a>
+		         		<a class="dropdown-item" href='<spring:url value="/admin?id=${sessionScope.user.id}"/>'>Pannello Admin</a>
 		         	</c:if>
-				    <a class="nav-link" href='<spring:url value="/user/logout?id=${sessionScope.user.id}"/>'>Esci</a>
+				    <a class="dropdown-item" href='<spring:url value="/user/logout?id=${sessionScope.user.id}"/>'>Esci</a>
 				  </div>
 				</div>
          </c:if>
