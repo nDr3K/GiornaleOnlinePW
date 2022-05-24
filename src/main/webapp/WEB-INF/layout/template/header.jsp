@@ -28,7 +28,7 @@
 			</c:if>
 			<c:if test="${sessionScope.user != null}">
 				<div class="dropdown">
-					<button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i style="font-size:2rem" class="fa-regular fa-circle-user"></i>
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
