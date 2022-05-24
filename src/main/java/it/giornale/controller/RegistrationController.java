@@ -69,6 +69,7 @@ public class RegistrationController
 		
 		userService.createUser(user);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		userService.modifyUser(user);
 		return "redirect:/";
 	}
 }
