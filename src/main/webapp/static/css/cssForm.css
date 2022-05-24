@@ -8,19 +8,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-
 .form-holder {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
 }
 
 .form-holder .form-content {
@@ -85,7 +78,7 @@ html, body {
     border: 0;
     outline: 0;
     border-radius: 6px;
-    background-color: #32363a;
+    background-color: #212529;
     font-size: 15px;
     font-weight: 300;
     color: #FFC107;
@@ -110,7 +103,7 @@ html, body {
     padding: 8px 20px;
     border-radius: 6px;
     text-align: left;
-    background-color: #32363a;
+    background-color: #212529;
     border: 0;
     font-size: 15px;
     font-weight: 300;
