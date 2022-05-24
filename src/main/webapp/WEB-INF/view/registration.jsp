@@ -32,7 +32,7 @@
 							<form:input path="password" id="password" type="password" cssClass="form-control" required="required" placeholder="Password" />
 							<form:errors path="password" id="password" cssClass="text-danger" />
 						</div>
-						<div class="form-button mt-3  d-flex justify-content-center">
+						<div class="form-button mt-3 d-flex justify-content-center">
 							<button id="submit" type="submit" class="btn btn-primary">Registrati</button>
 						</div>
 					</form:form>

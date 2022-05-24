@@ -71,7 +71,7 @@
     color: #FFC107;
 }
 
-.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content input[type=file], .form-content select {
     width: 100%;
     padding: 9px 20px;
     text-align: left;
@@ -84,7 +84,7 @@
     color: #FFC107;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    margin-top: 16px;
+    margin-top: 8px;
 }
 
 
@@ -107,23 +107,34 @@
     border: 0;
     font-size: 15px;
     font-weight: 300;
-    color: #fff;
+    color: #FFC107;
     outline: none;
     resize: none;
-    height: 120px;
     -webkit-transition: none;
     transition: none;
     margin-bottom: 14px;
+    margin-top: 8px;
+}
+
+.form-content textarea:focus {
+	background-color:  #212529;
+	color:  #FFC107;
 }
 
 
-.invalid-feedback{
+.invalid-feedback {
     color: #ff606e;
 }
 
-.valid-feedback{
+.valid-feedback {
     color: #2acc80;
 }
-::placeholder{
+
+::placeholder {
     color: #FFC107;
+}
+
+input[type=file]::file-selector-button {
+	background-color: #FFC107;
+	color: #212529; 
 }

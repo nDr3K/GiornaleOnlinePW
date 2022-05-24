@@ -3,16 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<div class="row mt-4">
-	<div class="col-6">
-		<div class="row">
-			<div class="col-12 text-center">
-				<h5>articoli robbe</h5>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1" enctype="multipart/form-data">
+<div class="form-body">
+	<div class="row">
+		<div class="form-holder ">
+			<div class="form-content">
+				<div class="form-items">
+					<h3>Registrati!</h3>
+					<p>Compila i campi sottostanti</p>
+					<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-6">
 							<input type="hidden" value="${id}" name="id"/>
@@ -21,11 +19,15 @@
 							<input name="title" id="title" type="text" class="form-control" required="required" value="${id > 0 ? article.title : ''}"/>
 						</div>
 						<div class="col-6">
+							<label for="author">Autore:</label>
+							<input name="author" id="author" type="text" class="form-control" required="required" value="${id > 0 ? article.author : ''}"/>
+						</div>
+						<div class="col-6">
 							<label for="abstract">Didascalia:</label>
 							<textarea name="caption" id="caption" class="form-control" rows="3" style="resize:none;" required="required">${id > 0 ? article.caption : ''}</textarea>
 						</div>
-						<div class="row">
 						<div class="col-6">
+							<label for="category">Categoria:</label>
 							<select name="category" id="category">
 								<c:forEach items="${categories}" var="category">
 									<c:if test="${category.id == article.category.id}">
@@ -37,12 +39,6 @@
 								</c:forEach>
 							</select>
 						</div>
-
-						<div class="col-6">
-							<label for="author">Autore:</label>
-							<input name="author" id="author" type="text" class="form-control" required="required" value="${id > 0 ? article.author : ''}"/>
-						</div>
-						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
@@ -51,13 +47,18 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-6 text-center">
+						<div class="col-6">
 							<label for="imagge">Inserisci immagine</label>
-							<input type="file" class="form-control mt-2" id="imagge" name="imagge">
+							<input type="file" class="form-control mt-2 btn-warning" id="imagge" name="imagge">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 text-center">
 							<input type="submit" value="Aggiorna Articolo" class="btn btn-primary mt-4">
 						</div>
 					</div>
 				</form>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -113,7 +113,18 @@
 	    <artifactId>commons-fileupload</artifactId>
 	    <version>1.4</version>
 	</dependency>
-	
+	<!-- DIPENDENZE ENCRYPT PASSOWRD -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>5.6.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-web</artifactId>
+	    <version>5.6.5</version>
+	</dependency>
+		
 	
   </dependencies>
   

@@ -3,6 +3,7 @@ package it.giornale.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,6 +25,9 @@ public class RegistrationController
 	
 	@Autowired
 	private RoleService roleService;
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	
 	private boolean userExist;
 	private boolean mailExist;
@@ -64,6 +68,7 @@ public class RegistrationController
 		} 
 		
 		userService.createUser(user);
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return "redirect:/";
 	}
 }
