@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body{
+    background-color: #212529;
+}
+
+.card-body{
+    border: 2px solid #FFC107;
+    background-color: #32363a;
+    border-radius: 4px;
+}
+
+button.categorie{
+    color: #FFC107;
+    font-size:15px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.bordo{
+    background-color: #32363a;
+    border-radius: 4px;
+}
+
+button.categorie:hover{
+    color: #d29a11;
+}
+
+button.categorie:focus, button.categorie:active, button.categorie:active:focus{
+   box-shadow: none;
+
+}
+.card{
+    background-color: inherit;
+}
+
+tr{
+    border-bottom: 1px solid #FFC107;
+}
