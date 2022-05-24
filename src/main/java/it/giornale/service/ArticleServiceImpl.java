@@ -89,4 +89,17 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		return list;
 	}
+
+	@Override
+	public List<Article> searchByTitle(String title) {
+		
+		List<Article> list = articleDao.readAll();
+		
+		list = list 
+				.stream()
+				.filter(b -> b.getTitle().contains(title))
+				.collect(Collectors.toList());
+		
+		return list;
+	}
 }

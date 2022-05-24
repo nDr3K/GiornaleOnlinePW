@@ -15,4 +15,5 @@ public interface ArticleService {
 	int getPrevious(int id);
 	List<Article> readLastTen();
 	List<Article> searchByCategory(String category);
+	List<Article> searchByTitle(String title);
 }
