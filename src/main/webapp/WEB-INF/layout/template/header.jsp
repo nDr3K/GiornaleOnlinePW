@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <div class="d-flex justify-content-center bg-dark">
-	<img src="static/image/sparvierodark.png" style="height:'50px'; width:'auto'" />
+	<img src="static/image/bannerDark.png" style="height:'50px'; width:'auto'" />
 </div>
 
 <nav class="p-3 bg-dark text-white">
@@ -29,7 +29,7 @@
 			<c:if test="${sessionScope.user != null}">
 				<div class="dropdown">
 					<button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i style="font-size:2rem" class="fa-regular fa-circle-user"></i>
+						&nbsp;<i style="font-size:2rem" class="fa-regular fa-circle-user"></i>&nbsp;
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<a class="dropdown-item" href='<spring:url value="/user?id=${sessionScope.user.id}"/>'>Gestione Account</a>
