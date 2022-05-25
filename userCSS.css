@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+body{
+    background-color: #32363a;
+    color: #FFC107;
+}
+
+.profiloTitolo{
+    background-color: #FFC107;
+    text-align: center;
+    color: black;
+}
+
+.icona-tema{
+    display: flex;
+    float: left;
+    margin: 10px 10px 10px 15px;
+}
+#cambiaTema{
+    display: flex;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.profilo{
+    width: 300px;
+    height: 300px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border: 1px solid #FFC107;
+}
+
+.immagine{
+    display: flex;
+    float: left;
+
+}
+
+.diventagiallo{
+    background-color: #32363a;
+    border: none;
+}
+
+.bordo{
+
+    text-align: center;
+    background-color: #32363a;
+    color: #FFC107;
+    border: 2px solid;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+#divPreferiti{
+
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: #32363a;
+    padding: 10px;
+    border-collapse: separate;
+    border: 1px solid #FFC107;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color:#FFC107 ;
+}
+#dati{
+    display: flex;
+    float: left;
+
+    position: relative;
+}
+
+.dati{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.submitButton{
+    background-color: #32363a;
+    border: 1px solid #FFC107;
+    color:#FFC107 ;
+}
+#tuttiPreferiti{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
