@@ -5,11 +5,11 @@
 <div class="container">
 	<div class="row row-cols-1 row-cols-md-1 g-4" style="margin-top: 10px; margin-left: 150px; margin-right: 150px; margin-bottom: 10px; text-align: center; justify-content: center">
 		<div class="col">
-			<div class="card h-100 bordo">
+			<div class="card h-100">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-10">
-							<button class="btn categorie" type="button" onclick="showElements('articles')">Articoli</button>
+							<button class="btn formatButtonCategory" type="button" onclick="showElements('articles')">Articoli</button>
 						</div>
 						<div class="col-2">
 							<a href='<spring:url value="/articleform?id=0"/>' class="btn btn-warning">Aggiungi</a>
@@ -46,7 +46,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-10">
-							<button class="btn categorie" type="button" onclick="showElements('categories')">Categorie</button>
+							<button class="btn formatButtonCategory" type="button" onclick="showElements('categories')">Categorie</button>
 						</div>
 						<div class="col-2">
 							<a href='<spring:url value="/categoryform?id=0"/>' class="btn btn-warning">Aggiungi</a>						
@@ -83,7 +83,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-10">
-							<button class="btn categorie" type="button" onclick="showElements('users')">Utenti</button>
+							<button class="btn formatButtonCategory" type="button" onclick="showElements('users')">Utenti</button>
 						</div>
 					</div>
 				</div>

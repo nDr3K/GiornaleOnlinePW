@@ -44,20 +44,26 @@ public class UserController
 			user.setMail(mail);
 			userService.modifyUser(user);
 		}
-		return "redirect:/user";
+		return "redirect:/user?id="+id;
 	}
 	
 	//cambio password
 	@PostMapping("/changepassword")
-	public String changePassword(@RequestParam("password") String password, @RequestParam("id") String id)
+	public String changePassword(@RequestParam("passwordCorrente") String passwordCorrente,
+								 @RequestParam("passwordNuova") String passwordNuova,
+								 @RequestParam("passwordConferma") String passwordConferma,
+							     @RequestParam("id") String id)
 	{
+		
+		if (passwordConferma != passwordCorrente) return "redirect:/user?id="+id;
+		
 		User user = userService.readById(Integer.parseInt(id));
-		if (passwordEncoder.matches(password, user.getPassword()))
+		if (passwordEncoder.matches(passwordCorrente, user.getPassword()))
 		{
-			user.setPassword(passwordEncoder.encode(password));
+			user.setPassword(passwordEncoder.encode(passwordNuova));
 			userService.modifyUser(user);
 		}
-		return "redirect:/user";
+		return "redirect:/user?id="+id;
 	}
 	
 	@GetMapping("/logout")

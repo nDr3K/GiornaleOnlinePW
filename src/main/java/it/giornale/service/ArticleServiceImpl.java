@@ -49,12 +49,11 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public boolean checkData(String title, String author, String caption, String content) 
+	public boolean checkData(String title, String author, String caption) 
 	{
 		if( Pattern.matches("[a-zA-Z-0-9אטלעש\\s'.,!?:-]{1,255}", title) &&
 			Pattern.matches("[a-zA-Zאטלעש\\s']{1,255}", author) &&
-			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", caption) &&
-			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'.,:_!?<>-]{1,}", content)	)
+			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'().,:_!?;-]{1,}", caption))
 		return true;
 		return false;
 	}
@@ -102,4 +101,18 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		return list;
 	}
+
+	@Override
+	public List<Article> searchByAuthor(String author) {
+
+		List<Article> list = articleDao.readAll();
+		
+		list = list 
+				.stream()
+				.filter(b -> b.getAuthor().contains(author))
+				.collect(Collectors.toList());
+		
+		return list;
+	}
+	
 }

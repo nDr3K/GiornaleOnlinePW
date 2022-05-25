@@ -11,10 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link rel="stylesheet" href="static/css/cssForm.css" type="text/css">
-	<link rel="stylesheet" href="static/css/CategoryDark.css" type="text/css">
-	<link rel="stylesheet" href="static/css/HomeDark.css" type="text/css">
-	<link rel="stylesheet" href="static/css/userCSS.css" type="text/css">
+	<link rel="stylesheet" href="static/css/cssDark.css" type="text/css">
     </head>
     <body class="d-flex flex-column h-100" style="background-color:#32363a">
     

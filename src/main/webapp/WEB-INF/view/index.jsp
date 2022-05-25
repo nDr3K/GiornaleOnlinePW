@@ -7,7 +7,7 @@
 	</div>
 <div class="container">
 	<c:forEach items="${articles}" var="article">
-		<div class="card mb-3 " style="max-width: 100%; margin: 20px; height: 300px; text-align: center" >
+		<div class="card mb-3 setBorderArticleHome" style="max-width: 100%; margin: 20px; height: 300px; text-align: center" >
 		    <div class="row g-0">
 		        <div class="col-md-4" >
 		            <img class="img-fluid rounded-start" alt="Article Image" style="height: 295px; width: 450px;" src='<spring:url value="${article.image}"/>' />

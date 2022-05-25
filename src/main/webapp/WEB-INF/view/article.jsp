@@ -6,7 +6,7 @@
 <div class="container-fluid">
 	<div class="card-group bg-warning">
 	    <div class="card mb-3" align="center" style="max-width: 80%;margin: 20px; border-radius: 5px; border: 2px solid black">
-	        <div class="row g-0">
+	        <div class="row g-0 backgroundArticle">
 	            <div class="col-md-12 " align="center">
 	                <div class="card-body">
 	                    <h5 class="card-title" style="text-align: left">${article.title}</h5>
@@ -17,17 +17,20 @@
 	                       	<span class="card-text">${article.content}</span>
 	                    </div>
 	                    <hr>
+	                    <div class="col-12 justify-content-center">
 	                    <c:if test="${sessionScope.user != null}">
 	                        <c:choose>
 	                            <c:when test="${favorite}">
-	                                <a href='<spring:url value="/article/remove?id=${article.id}"/>'>Rimuovi dai preferiti</a>
+	                                <a class="btn btn-warning" href='<spring:url value="/article/remove?id=${article.id}"/>'>Rimuovi dai preferiti</a>
 	                            </c:when>
 	                            <c:otherwise>
-	                                <a href='<spring:url value="/article/add?id=${article.id}"/>'>Aggiungi ai preferiti</a>
+	                                <a class="btn btn-warning" href='<spring:url value="/article/add?id=${article.id}"/>'>Aggiungi ai preferiti</a>
 	                            </c:otherwise>
 	                        </c:choose>
 	                    </c:if>
+	                    </div>
 	                </div>
+	                <hr>
 	                <div class="row g-0">
 	                    <div class="col-md-6" >
 	                        <p class="card-text">di ${article.author}</p>
@@ -54,12 +57,12 @@
 	<nav aria-label="Page navigation example" style="justify-content: center; display: flex; margin-top:30px;" >
 	    <ul class="pagination" >
 	        <li class="page-item">
-	            <a class="page-link" href='<spring:url value="/article/previous?id=${article.id}"/>' aria-label="Previous" style="margin-right: 200px;">
+	            <a class="page-link btn btn-primary" href='<spring:url value="/article/previous?id=${article.id}"/>' aria-label="Previous" style="margin-right: 200px;">
 	                <span aria-hidden="true">&laquo; Articolo precedente</span>
 	            </a>
 	        </li>
 	        <li>
-	            <a class="page-link" href='<spring:url value="/article/next?id=${article.id}"/>' aria-label="Next" style="margin-left: 200px;">
+	            <a class="page-link btn btn-primary" href='<spring:url value="/article/next?id=${article.id}"/>' aria-label="Next" style="margin-left: 200px;">
 	                <span aria-hidden="true">Articolo successivo &raquo;</span>
 	            </a>
 	        </li>

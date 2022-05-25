@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<br>
 <footer class="footer mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container mw-100" >
             <div class="col-md-8 d-flex justify-content-between">
                 <span class="text-muted">Lo Sparviero</span>

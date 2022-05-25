@@ -6,9 +6,9 @@
 	<c:forEach items="${categories}" var="category">
 		<div class="row row-cols-1 row-cols-md-1 g-4" style="margin-top: 10px; margin-left: 150px; margin-right: 150px; margin-bottom: 10px; text-align: center; justify-content: center">
 			<div class="col">
-				<div class="card h-100 bordo">
+				<div class="card h-100">
 					<div class="card-body">
-						<button class="btn categorie" type="button" onclick="showElements(${category.id})">${category.description}</button>
+						<button class="btn formatButtonCategory" type="button" onclick="showElements(${category.id})">${category.description}</button>
 					</div>
 				</div>
 			</div>
@@ -20,8 +20,11 @@
 						<c:forEach items="${articles}" var="article">
 							<c:if test="${article.category.id == category.id}">
 								<tr>
-									<td>
+									<td width="75%">
 										<a href='<spring:url value="/article?id=${article.id}"/>' class="nav-link nav-link-white">${article.title}</a>
+									</td>
+									<td width="25%" align="right">
+										<span class="nav-link nav-link-white">${article.date}</span>
 									</td>
 								</tr>
 							</c:if>

@@ -19,7 +19,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "articles")
@@ -31,15 +30,12 @@ public class Article implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9אטלעש\\s'.,!?:-]{1,255}", message = "{article.error.title}")
 	@Column(name = "title", length = 255, nullable = false)
 	private String title;
 	
-	@Pattern(regexp = "[a-zA-Zאטלעש\\s']{1,255}", message = "{article.error.author}")
 	@Column(name = "author", length = 255, nullable = false)
 	private String author;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.caption}")
 	@Column(name = "caption",nullable = false)
 	private String caption;
 	
@@ -51,7 +47,9 @@ public class Article implements Serializable
 	@JoinColumn(name = "category_id", referencedColumnName = "id")
 	private Category category;
 	
-	@Pattern(regexp = "[a-zA-Z-0-9-אטלעש\\s'.,:_!?-]{1,}", message = "{article.error.content}")
+	@Column(name = "keywords", nullable = false)
+	private String keywords;
+	
 	@Column(name = "content", nullable = false)
 	private String content;
 	
@@ -121,5 +119,12 @@ public class Article implements Serializable
 	}
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+	public String getKeywords() {
+		return keywords;
+	}
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
 	}	
+	
 }

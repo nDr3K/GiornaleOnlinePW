@@ -58,6 +58,7 @@ public class ArticleFormController {
 								@RequestParam("title") String title,
 								@RequestParam("author") String author,
 								@RequestParam("category") String category,
+								@RequestParam("keywords") String keywords,
 								@RequestParam("caption") String caption,
 								@RequestParam("content") String content,
 								@RequestParam("imageLink") String imageLink,
@@ -78,11 +79,12 @@ public class ArticleFormController {
 		article.setCategory(c);
 		article.setImage(imageLink);
 		
-		if(articleService.checkData(title,author,caption,content))
+		if(articleService.checkData(title,author,caption))
 		{
 			article.setTitle(title);
 			article.setAuthor(author);
 			article.setCaption(caption);
+			article.setKeywords(keywords);
 			article.setContent(content);
 		}
 		else 

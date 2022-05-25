@@ -56,6 +56,7 @@ public class LoginController {
 				loginSuccess = true;
 				loginFailure = false;
 				session.setAttribute("user", u);
+				return "redirect:/";
 			 } else {
 				loginFailure = true;
 				loginSuccess = false;

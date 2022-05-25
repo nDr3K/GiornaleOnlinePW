@@ -42,6 +42,12 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
+							<label for="content">Parole chiave (separale con una ,):</label>
+							<input type="text" name="keywords" id="keywords" class="form-control" required="required" value="${id > 0 ? article.keywords : ''}">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
 							<label for="content">Descrizione:</label>
 							<textarea name="content" id="content" class="form-control" rows="12" style="resize:none;" required="required">${id > 0 ? article.content : ''}</textarea>
 						</div>
