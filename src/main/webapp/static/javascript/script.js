@@ -1,6 +1,5 @@
 function showElements(id)
 {
-	alert(id);
 	display = document.getElementById(id).style.display;
 	
 	if (display === "block") document.getElementById(id).style.display = "none";

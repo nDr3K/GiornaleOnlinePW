@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="static/css/cssForm.css" type="text/css">
 	<link rel="stylesheet" href="static/css/CategoryDark.css" type="text/css">
 	<link rel="stylesheet" href="static/css/HomeDark.css" type="text/css">
+	<link rel="stylesheet" href="static/css/userCSS.css" type="text/css">
     </head>
     <body class="d-flex flex-column h-100" style="background-color:#32363a">
     

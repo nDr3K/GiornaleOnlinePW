@@ -33,7 +33,7 @@ public class ArticleFormController {
 	private boolean mode =  false;
 	
 	@GetMapping
-	public String getPage(@RequestParam(name = "id", required = false) String id, Model model) {
+	public String getPage(@RequestParam("id") String id, Model model) {
 		
 		Article article;
 		
@@ -60,8 +60,8 @@ public class ArticleFormController {
 								@RequestParam("category") String category,
 								@RequestParam("caption") String caption,
 								@RequestParam("content") String content,
-								@RequestParam("image") String image,
-								@RequestParam("imagge") MultipartFile imagge,
+								@RequestParam("imageLink") String imageLink,
+								@RequestParam(name = "image") MultipartFile image,
 								HttpSession session
 								) 
 	{
@@ -76,7 +76,7 @@ public class ArticleFormController {
 		else article = articleService.getArticleById(id);
 		
 		article.setCategory(c);
-		article.setImage(image);
+		article.setImage(imageLink);
 		
 		if(articleService.checkData(title,author,caption,content))
 		{
@@ -99,14 +99,14 @@ public class ArticleFormController {
 		 //gestione immagini
 		 String fileName = String.valueOf(article.getId());
 		 System.out.println(fileName);
-		 if (imagge != null && !imagge.isEmpty())
+		 if (image != null && !image.isEmpty())
 			{
 				String rootDir = session.getServletContext().getRealPath("/");
 				String filePath = rootDir + "static\\articles\\" + fileName + ".png";
 				System.out.println(filePath);
 				try 
 				{
-					imagge.transferTo(new File(filePath));
+					image.transferTo(new File(filePath));
 					article.setImage("static\\articles\\" + fileName + ".png");
 					articleService.update(article);
 				} 

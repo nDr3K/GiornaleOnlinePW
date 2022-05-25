@@ -9,7 +9,6 @@
 					<h3>${mode ? 'Crea Categoria' : 'Modifica Categoria'}</h3>
 					<p></p>
 					<form:form method="POST" modelAttribute="category" acceptCharset="ISO-8859-1">
-					<form:errors path="*" cssClass="alert alert-danger" element="div" id="generalAlert" />
 						<div class="row justify-content-center">
 							<div class="col-md-12">
 								<form:hidden path="id" />

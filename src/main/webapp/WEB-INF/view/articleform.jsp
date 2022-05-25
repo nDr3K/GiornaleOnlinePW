@@ -14,7 +14,7 @@
 					<div class="row">
 						<div class="col-6">
 							<input type="hidden" value="${id}" name="id"/>
-							<input type="hidden" value="sonounimmagine" name="image"/>
+							<input type="hidden" value="sonounimmagine" name="imageLink"/>
 							<label for="title">Titolo:</label>
 							<input name="title" id="title" type="text" class="form-control" required="required" value="${id > 0 ? article.title : ''}"/>
 						</div>
@@ -48,8 +48,8 @@
 					</div>
 					<div class="row">
 						<div class="col-6">
-							<label for="imagge">Inserisci immagine</label>
-							<input type="file" class="form-control mt-2 btn-warning" id="imagge" name="imagge">
+							<label for="image">Inserisci immagine</label>
+							<input type="file" class="form-control mt-2 btn-warning" id="image" name="image">
 						</div>
 					</div>
 					<div class="row">
