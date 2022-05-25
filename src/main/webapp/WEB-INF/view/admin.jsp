@@ -9,7 +9,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-10">
-							<button class="btn categorie" type="button">Articoli</button>
+							<button class="btn categorie" type="button" onclick="showElements('articles')">Articoli</button>
 						</div>
 						<div class="col-2">
 							<a href='<spring:url value="/articleform?id=0"/>' class="btn btn-warning">Aggiungi</a>
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px;">
+	<div id="articles" class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px; display:none">
 		<div class="card">
 			<div class="card-body">
 				<table class="table">
@@ -46,7 +46,7 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-10">
-							<button class="btn categorie" type="button">Categorie</button>
+							<button class="btn categorie" type="button" onclick="showElements('categories')">Categorie</button>
 						</div>
 						<div class="col-2">
 							<a href='<spring:url value="/categoryform?id=0"/>' class="btn btn-warning">Aggiungi</a>						
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px;">
+	<div id="categories" class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px; display:none">
 		<div class="card">
 			<div class="card-body">
 				<table class="table">
@@ -83,15 +83,14 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-10">
-							<button class="btn categorie" type="button">Utenti</button>
+							<button class="btn categorie" type="button" onclick="showElements('users')">Utenti</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row row-cols-1 row-cols-md-1 g-4"
-		style="margin-left: 150px; margin-right: 150px; border-radius: 5px;">
+	<div id="users" class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px; display:none">
 		<div class="card">
 			<div class="card-body">
 				<table class="table">
@@ -113,3 +112,5 @@
 		</div>
 	</div>
 </div>
+
+<script src="<c:url value="/static/javascript/script.js" />"></script>

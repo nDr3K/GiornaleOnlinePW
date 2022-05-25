@@ -1,12 +1,8 @@
-//
-let elements = document.getElementsByClassName("categorie");
-
-for (let i = 0; i < elements.length; i++)
+function showElements(id)
 {
-    elements[i].addEventListener("click", showElements());
-}
-
-function showElements()
-{
-    this.parentNode.parentNode.parentNode.parentNode.querySelector("elementsContent")[0].style.display = "block";
+	alert(id);
+	display = document.getElementById(id).style.display;
+	
+	if (display === "block") document.getElementById(id).style.display = "none";
+	else document.getElementById(id).style.display = "block";
 }
