@@ -29,12 +29,18 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.ui.context.support.ResourceBundleThemeSource;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.servlet.ThemeResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.theme.CookieThemeResolver;
+import org.springframework.web.servlet.theme.ThemeChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
@@ -186,5 +192,35 @@ public class ContextConfiguration implements WebMvcConfigurer
 	public BCryptPasswordEncoder passwordEncoder()
 	{
 		return new BCryptPasswordEncoder();
+	}
+	
+	//gestione temi
+	@Override 
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	    registry.addResourceHandler("/themes/**").addResourceLocations("classpath:/themes/");
+	}
+	
+	@Bean
+	public ResourceBundleThemeSource resourceBundleThemeSource() {
+	    return new ResourceBundleThemeSource();
+	}
+	
+	@Bean
+	public ThemeResolver themeResolver() {
+	    CookieThemeResolver themeResolver = new CookieThemeResolver();
+	    themeResolver.setDefaultThemeName("light");
+	    return themeResolver;
+	}
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+	    registry.addInterceptor(themeChangeInterceptor());
+	}
+
+	@Bean
+	public ThemeChangeInterceptor themeChangeInterceptor() {
+	    ThemeChangeInterceptor interceptor = new ThemeChangeInterceptor();
+	    interceptor.setParamName("theme");
+	    return interceptor;
 	}
 }

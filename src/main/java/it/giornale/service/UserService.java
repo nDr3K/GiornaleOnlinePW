@@ -14,4 +14,5 @@ public interface UserService
 	User readByUsername(String username);
 	boolean usernameExist(String username);
 	boolean mailExist(String mail);
+	boolean checkPassword(String password);
 }

@@ -9,15 +9,11 @@ body{
     -moz-osx-font-smoothing: grayscale;
     color: black;
 }
-.searchBar{
-    background-color: white;
-}
 
-.searchBar:focus{
-    background-color: white;
-    box-shadow: none;
+.btn:focus, .btn:hover {
+	outline:none;
+	box-shadow: none;
 }
-
 
 .mb-3{
     border: 2px solid black;
@@ -147,11 +143,11 @@ tr{
     color: black;
 }
 
-.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+.form-content input[type=text], .form-content input[type=file], .form-content input[type=password], .form-content input[type=email], .form-content select {
     width: 100%;
     padding: 9px 20px;
     text-align: left;
-    border: 0;
+    border: 1px solid black;
     outline: 0;
     border-radius: 6px;
     background-color: white;
@@ -169,11 +165,14 @@ tr{
     background-color: whitesmoke;
     color: black;
     outline: none;
-    border: 0px;
+    border: 1px solid black;
     box-shadow: none;
 }
-btn-primary:hover{
+.btn-primary:hover{
     background-color: black;
+    color: white;
+    outline: none;
+    box-shadow: none;
 }
 
 .btn-white{
@@ -181,7 +180,7 @@ btn-primary:hover{
     background-color: whitesmoke;
     color: black;
     outline: none;
-    border: 0px;
+    border: 1px solid black;
     box-shadow: none;
 }
 
@@ -196,27 +195,11 @@ btn-white:hover{
     border: 0px;
     box-shadow: none;
 }
-.btn-light{
-    margin: 0 auto;
-    background-color: white;
-    color: black;
-    outline: none;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-shadow: none;
-}
-
-.btn-light:hover{
-    background-color: lightgray;
-    color: black;
-    border-color: lightgray;
-
-}
 
 
 .btn-warning:hover{
-    background-color: white;
-    color: #212529;
+    background-color: black;
+    color: whitesmoke;
 }
 
 .btn-warning{
@@ -227,6 +210,21 @@ btn-white:hover{
     border: 1px solid black;
     box-shadow: none;
 }
+
+.btn-dropdown:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.btn-dropdown{
+    margin: 0 auto;
+    background-color: white;
+    color: #212529;
+    outline: none;
+    border: 1px solid black;
+    box-shadow: none;
+}
+
 
 .form-content textarea {
     position: static;
@@ -259,12 +257,16 @@ btn-white:hover{
 .valid-feedback{
     color: #2acc80;
 }
+
 ::placeholder{
+	color: black;
 }
+
 input[type=file]::file-selector-button {
     background-color: whitesmoke;
     color: #212529;
 }
+
 .backgroundArticle{
     background-color: whitesmoke;
     border: 1px solid black;
@@ -273,10 +275,6 @@ input[type=file]::file-selector-button {
 
 
 /*user*/
-
-body.user{
-    background-color: #32363a;
-}
 
 .myProfile{
     background-color: black;
@@ -310,14 +308,14 @@ body.user{
 }
 
 .setBackGroundFavoritesDiv{
-    background-color: white;
+    background-color: whitesmoke;
     border: none;
 }
 
 .setPositionFavoritesDiv{
 
     text-align: center;
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     border: 2px solid;
     margin-top: 15px;
@@ -329,7 +327,7 @@ a{
 }
 
 a:hover{
-    color: #FFC107;
+    color: lightskyblue;
 }
 
 .submitButton{
@@ -345,23 +343,35 @@ a:hover{
 .setBorderArticleHome{
     border: 1px solid black;
 }
-.login{
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
-.login:hover{
-    background-color: white;
-    color: #32363a;
-}
-.barnav{
-    background-color: white;
+
+.text-nav{
+    color: #212529;;
 }
 
-.textBarnav{
+.text-nav:hover{
     color: black;
 }
 
-.textBarnav:hover{
+.searchBar{
+    background-color: white;
+    color: black;
+}
+
+.searchBar:focus{
+    background-color: white;
+    box-shadow: none;
+    color: black;
+}
+
+.searchBar::placeholder{
     color: #32363a;
 }
+
+.searchBar::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+.bg-nav {
+	background-color: white;
+}
+

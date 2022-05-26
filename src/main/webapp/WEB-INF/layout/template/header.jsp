@@ -1,22 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
-<div class="d-flex justify-content-center bg-dark">
+				
+<div class="d-flex justify-content-center bg-nav">
 	<img src="static/image/bannerDark.png" style="height:'50px'; width:'auto'" />
 </div>
 
-<nav class="p-3 bg-dark text-white">
+<nav class="p-3 bg-nav">
 	<div class="container">
 		<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
 			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 align-items-center">
 				<li><img src="static/image/iconaDark.png" style="margin-right:20px"/></li>
-				<li><a class="nav-link text-white px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/"/>'>Home</a></li>
-				<li><a class="nav-link text-white px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/categories?id=0"/>'>Categories</a></li>
+				<li><a class="nav-link text-nav px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/"/>'>Home</a></li>
+				<li><a class="nav-link text-nav px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/categories?id=0"/>'>Categories</a></li>
 			</ul>
-			<form class="d-flex col-10 col-lg-auto mb-3 mb-lg-0 me-lg-4" action="articles" method="GET">
-				<input type="search" class="form-control form-control-dark text-white bg-dark" name="searchText" placeholder="Ricerca..." aria-label="Ricerca">
+			<form class="d-flex col-10 col-lg-auto mb-lg-0 me-lg-4" action="articles" method="GET">
+				<input type="search" class="form-control searchBar" name="searchText" placeholder="Ricerca..." aria-label="Ricerca">
 				<input class="btn btn-warning" type="submit" value="Cerca"/>
 			</form>
 			<c:if test="${sessionScope.user == null}">
@@ -29,7 +28,7 @@
 			</c:if>
 			<c:if test="${sessionScope.user != null}">
 				<div class="dropdown">
-					<button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						&nbsp;<i style="font-size:2rem" class="fa-regular fa-circle-user"></i>&nbsp;
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -41,6 +40,18 @@
 					</div>
 				</div>
 			</c:if>
+			<div>
+				<form action="<c:url value='/'/>" method="POST" name="themeChangeForm" id="themeChangeForm">
+					<button class="disappear" type="submit" name="theme" value="light"><i style="font-size:2rem" class="fa-solid fa-sun"></i></button>
+	                <button class="disappear" type="submit" name="theme" value="dark"><i style="font-size:2rem" class="fa-solid fa-moon"></i></button>
+				</form>
+			</div>
 		</div>
 	</div>
 </nav>
+
+<script type="text/javascript">
+            function submitForm() {
+                document.themeChangeForm.submit();
+            }
+        </script>

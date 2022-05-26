@@ -1,5 +1,6 @@
 package it.giornale.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,7 @@ public class RegistrationController
 	
 	//registrazione effettiva
 	@PostMapping
-	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model)
+	public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, HttpSession session)
 	{
 		userExist = false;
 		mailExist = false;
@@ -66,7 +67,8 @@ public class RegistrationController
 			model.addAttribute("mailExist", mailExist);
 			return "registration";
 		} 
-		
+		session.setAttribute("registrationSuccess", true);
+		session.setAttribute("user", user);
 		userService.createUser(user);
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userService.modifyUser(user);

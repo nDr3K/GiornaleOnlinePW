@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,14 +23,9 @@ public class LoginController {
 	 @Autowired
 	 private BCryptPasswordEncoder passwordEncoder;
 	 
-	 private boolean loginSuccess;
-	 private boolean loginFailure;
-	 
 	 @GetMapping
-	 public String getPage(Model model)
+	 public String getPage()
 	 {
-		 model.addAttribute("loginSuccess", loginSuccess);
-		 model.addAttribute("loginFailure", loginFailure);
 		 return "login";
 	 }
 	 
@@ -46,22 +40,25 @@ public class LoginController {
 			 u = userService.readByUsername(username);
 		} catch (Exception e) 
 	 	{
-			loginFailure = true;
-			loginSuccess = false;
+			session.setAttribute("loginFailure", true);
 			return "redirect:/login";
 		}
 		 
 			 if (passwordEncoder.matches(password, u.getPassword()))
 			 {
-				loginSuccess = true;
-				loginFailure = false;
+				session.setAttribute("loginSuccess", true);
 				session.setAttribute("user", u);
 				return "redirect:/";
 			 } else {
-				loginFailure = true;
-				loginSuccess = false;
+				 session.setAttribute("loginFailure", true);
 			}
 		 return "redirect:/login";
 	 }
 
+	 @GetMapping("/failure")
+	 public String dismissFailure(HttpSession session)
+	 {
+		session.setAttribute("loginFailure", false);
+		return "redirect:/login";
+	 }
 }

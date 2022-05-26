@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container">
 	<c:forEach items="${categories}" var="category">
@@ -31,7 +32,7 @@
 										<a href='<spring:url value="/article?id=${article.id}"/>' class="nav-link nav-link-white">${article.title}</a>
 									</td>
 									<td width="25%" align="right">
-										<span class="nav-link nav-link-white">${article.date}</span>
+										<span class="nav-link nav-link-white"><fmt:formatDate value="${article.date}" pattern = "dd-MM-yyyy"/></span>
 									</td>
 								</tr>
 							</c:if>

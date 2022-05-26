@@ -33,6 +33,7 @@
 							<form:errors path="password" id="password" cssClass="text-danger" />
 						</div>
 						<div class="form-button mt-3 d-flex justify-content-center">
+							<form:input path="image" id="image" type="hidden" value="static/users/defaultUserIcon.png"/>
 							<button id="submit" type="submit" class="btn btn-primary">Registrati</button>
 						</div>
 					</form:form>

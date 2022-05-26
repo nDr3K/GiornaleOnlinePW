@@ -45,7 +45,10 @@ public class User implements Serializable
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
 	
-	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@Column(name = "image", nullable = false)
+	private String image;
+	
+	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	@JoinTable
 		(
 				name = "favorites",
@@ -110,4 +113,14 @@ public class User implements Serializable
 		this.favorites.remove(article);
 		article.getUsers().remove(this);
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
+	
 }

@@ -10,23 +10,14 @@
 				<div class="form-items">
 					<h3>Accedi</h3>
 					<p>Inserisci i tuoi dati</p>
-					<c:if test="${loginSuccess}">
-						<div>
-							<div class="alert alert-success alert-dismissible mt-4" role="alert">
-								<span>Accesso eseguito</span>
-								<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+						<c:if test="${sessionScope.loginFailure}">
+							<div>
+								<div class="alert alert-danger alert-dismissible mt-4" role="alert">
+									<span>Nome utente non esistente o password errata</span>
+									<a class="btn-close" href="login/failure"></a>
+								</div>
 							</div>
-						</div>
-						</c:if>
-						<c:if test="${loginFailure}">
-						<div>
-							<div class="alert alert-danger alert-dismissible mt-4" role="alert">
-								<span>Nome utente non esistente o password errata</span>
-								<button class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-							</div>
-						</div>
-					</c:if>
-											
+						</c:if>											
 					<form:form action="login/checkdata"  method="POST" acceptCharset="ISO-8859-1">		
 						<div class="row justify-content-center">
 							<div class="col-md-12">

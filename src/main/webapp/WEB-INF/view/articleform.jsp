@@ -8,7 +8,7 @@
 		<div class="form-holder ">
 			<div class="form-content">
 				<div class="form-items">
-					<h3>Registrati!</h3>
+					<h3>${id > 0 ? 'Modifica Articolo' : 'Inserisci Articolo'}</h3>
 					<p>Compila i campi sottostanti</p>
 					<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1" enctype="multipart/form-data">
 					<div class="row">
@@ -60,7 +60,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12 text-center">
-							<input type="submit" value="Aggiorna Articolo" class="btn btn-primary mt-4">
+							<input type="submit" value="${id > 0 ? 'Aggiorna Articolo' : 'Aggiungi Articolo'}" class="btn btn-primary mt-4">
 						</div>
 					</div>
 				</form>

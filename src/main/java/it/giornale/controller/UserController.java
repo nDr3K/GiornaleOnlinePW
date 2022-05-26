@@ -1,5 +1,8 @@
 package it.giornale.controller;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.giornale.model.User;
 import it.giornale.service.UserService;
@@ -24,6 +28,8 @@ public class UserController
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	
+	private boolean weak, notSame, notMatches;
+	
 	//ritorna pagina dell utente loggato
 	@GetMapping
 	public String getPage(@RequestParam("id") String id, Model model)
@@ -31,6 +37,9 @@ public class UserController
 		User user = userService.readById(Integer.parseInt(id));
 		model.addAttribute("user", user);
 		model.addAttribute("articles", user.getFavorites());
+		model.addAttribute("weak", weak);
+		model.addAttribute("notSame", notSame);
+		model.addAttribute("notMatches", notMatches);
 		return "user";
 	}
 	
@@ -52,16 +61,35 @@ public class UserController
 	public String changePassword(@RequestParam("passwordCorrente") String passwordCorrente,
 								 @RequestParam("passwordNuova") String passwordNuova,
 								 @RequestParam("passwordConferma") String passwordConferma,
-							     @RequestParam("id") String id)
+							     @RequestParam("id") String id, Model model)
 	{
 		
-		if (passwordConferma != passwordCorrente) return "redirect:/user?id="+id;
+		if (!passwordConferma.equals(passwordNuova))
+			{
+				notSame = true;
+				model.addAttribute("notSame", notSame);
+				return "redirect:/user?id="+id;
+			} else notSame = false;
+		
+		if (!userService.checkPassword(passwordNuova))
+			{
+				weak = true;
+				model.addAttribute("weak", weak);
+				return "redirect:/user?id="+id;
+			} else weak = false;
+		
 		
 		User user = userService.readById(Integer.parseInt(id));
 		if (passwordEncoder.matches(passwordCorrente, user.getPassword()))
 		{
+			notMatches = false;
 			user.setPassword(passwordEncoder.encode(passwordNuova));
 			userService.modifyUser(user);
+		}
+		else 
+		{
+			notMatches = true;
+			model.addAttribute("notMatches", notMatches);
 		}
 		return "redirect:/user?id="+id;
 	}
@@ -71,5 +99,35 @@ public class UserController
 	{
 		session.removeAttribute("user");
 		return "redirect:/";
+	}
+	
+	@PostMapping("/changeavatar")
+	public String setAvatar(@RequestParam("id") String id, @RequestParam("image") MultipartFile image, HttpSession session)
+	{
+		User user = userService.readById(Integer.parseInt(id));
+		 
+		String fileName = String.valueOf(user.getId());
+		if (image != null && !image.isEmpty())
+		{
+			String rootDir = session.getServletContext().getRealPath("/");
+			String filePath = rootDir + "static\\users\\" + fileName + ".png";
+			
+			try 
+			{
+				image.transferTo(new File(filePath));
+				user.setImage("static\\users\\" + fileName + ".png");
+				userService.modifyUser(user);
+			} 
+			catch (IllegalStateException e) 
+			{
+				e.printStackTrace();
+			} 
+			catch (IOException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		 
+		return "redirect:/user?id="+id;
 	}
 }

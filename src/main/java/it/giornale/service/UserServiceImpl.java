@@ -72,4 +72,11 @@ public class UserServiceImpl implements UserService
 		return userDao.mailExist(mail);
 	}
 
+	@Override
+	public boolean checkPassword(String password) 
+	{
+		if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.!?-_])(?=\\S+$).{8,30}$")) return true;
+		return false;
+	}
+
 }

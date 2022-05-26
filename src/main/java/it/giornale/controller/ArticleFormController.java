@@ -100,12 +100,12 @@ public class ArticleFormController {
 		 
 		 //gestione immagini
 		 String fileName = String.valueOf(article.getId());
-		 System.out.println(fileName);
+		 
 		 if (image != null && !image.isEmpty())
 			{
 				String rootDir = session.getServletContext().getRealPath("/");
 				String filePath = rootDir + "static\\articles\\" + fileName + ".png";
-				System.out.println(filePath);
+				
 				try 
 				{
 					image.transferTo(new File(filePath));
