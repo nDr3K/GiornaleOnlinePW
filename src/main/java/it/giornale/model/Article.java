@@ -65,6 +65,8 @@ public class Article implements Serializable
 		)
 	private List<User> users = new ArrayList<>();
 	
+	@Column(name = "visible")
+	private boolean visible;
 	
 	public int getId() {
 		return id;
@@ -125,6 +127,12 @@ public class Article implements Serializable
 	}
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
+	}
+	public boolean isVisible() {
+		return visible;
+	}
+	public void setVisible(boolean visible) {
+		this.visible = visible;
 	}	
 	
 }

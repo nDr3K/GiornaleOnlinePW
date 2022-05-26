@@ -1,5 +1,6 @@
 package it.giornale.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,14 @@ public class CategoryServiceImpl implements CategoryService
 	public Category readById(int id) 
 	{
 		return categoryDao.readById(id);
+	}
+	
+	@Override
+	public List<Category> filterById(int id) 
+	{
+		List<Category> list = new ArrayList<>();
+		list.add(categoryDao.readById(id));
+		return list;
 	}
 
 }

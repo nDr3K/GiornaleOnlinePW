@@ -25,11 +25,14 @@
 				<table class="table">
 				<c:forEach items="${articles}" var="article">
 					<tr>
-						<td width="73%">	
+						<td width="70%">	
 							<a class="nav-link nav-link-white" href='<spring:url value="/article?id=${article.id}"/>'>${article.title}</a>
 						</td>
-						<td valign="middle" width="17%" align="right">
-							<a class="btn btn-primary" href='<spring:url value="/articleform?id=${article.id}"/>'>Modifica</a>
+						<td valign="middle" width="10%" align="right">
+							<a class="btn btn-white" href='<spring:url value="admin/hidearticle?id=${article.id}"/>'>${!article.visible ? "Nascondi" : "Mostra" }</a>
+						</td>
+						<td valign="middle" width="10%" align="right">
+							<a class="btn btn-white" href='<spring:url value="/articleform?id=${article.id}"/>'>Modifica</a>
 						</td>
 						<td valign="middle" width="10%">
 							<a class="btn btn-danger" href='<spring:url value="admin/deletearticle?id=${article.id}"/>'>Elimina</a>
@@ -66,7 +69,7 @@
 							<span class="nav-link nav-link-white">${category.description}</span>
 						</td>
 						<td valign="middle" width="17%" align="right">
-							<a class="btn btn-primary" href='<spring:url value="/categoryform?id=${category.id}"/>'>Modifica</a>
+							<a class="btn btn-white" href='<spring:url value="/categoryform?id=${category.id}"/>'>Modifica</a>
 						</td>
 						<td valign="middle" width="10%">
 							<a class="btn btn-danger" href='<spring:url value="admin/deletecategory?id=${category.id}"/>'>Elimina</a>
@@ -100,7 +103,7 @@
 							<span class="nav-link nav-link-white">${user.username}</span>
 						</td>
 						<td valign="middle" width="17%" align="right">
-							<a class="btn btn-primary" href='<spring:url value="admin/change?id=${user.id}"/>'>Cambia ruolo</a>
+							<a class="btn btn-white" href='<spring:url value="admin/change?id=${user.id}"/>'>Cambia ruolo</a>
 						</td>
 						<td valign="middle" width="10%">
 							<a class="btn btn-danger" href='<spring:url value="admin/deleteuser?id=${user.id}"/>'>Elimina</a>

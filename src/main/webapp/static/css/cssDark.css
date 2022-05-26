@@ -163,6 +163,23 @@ button.formatButtonCategory:hover{
     box-shadow: none;
 }
 
+.btn-primary:hover{
+	background-color: #111518
+}
+
+.btn-white{
+    margin: 0 auto;
+    background-color: #32363a;
+    color: #FFC107;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+}
+
+.btn-white:hover{
+	background-color: #43472b
+}
+
 .btn-danger{
     margin: 0 auto;
     background-color: #630606;
@@ -170,6 +187,7 @@ button.formatButtonCategory:hover{
     border: 0px;
     box-shadow: none;
 }
+
 .btn-warning{
     margin: 0 auto;
     background-color: #FFC107;

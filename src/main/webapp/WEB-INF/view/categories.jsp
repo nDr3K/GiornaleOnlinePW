@@ -9,6 +9,13 @@
 				<div class="card h-100">
 					<div class="card-body">
 						<button class="btn formatButtonCategory" type="button" onclick="showElements(${category.id})">${category.description}</button>
+						<c:if test="${mode}">
+							<script>
+							window.onload = function() {
+								document.getElementById(${category.id}).style.display = "block";
+								};
+							</script>
+						</c:if>
 					</div>
 				</div>
 			</div>

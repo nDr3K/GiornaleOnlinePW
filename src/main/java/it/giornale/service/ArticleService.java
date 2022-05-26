@@ -17,4 +17,5 @@ public interface ArticleService {
 	List<Article> searchByCategory(String category);
 	List<Article> searchByTitle(String title);
 	List<Article> searchByAuthor(String author);
+	List<Article> searchByKeywords(String keyword);
 }

@@ -55,6 +55,9 @@
 	    <put-attribute name="content" value="/WEB-INF/view/articleform.jsp" />
 	 </definition> 
 	  
-  
-  
+	 <definition name="articles" extends="baseLayout">
+	    <put-attribute name="title" value="Articles" />
+	    <put-attribute name="content" value="/WEB-INF/view/articles.jsp" />
+	 </definition> 
+	 
 </tiles-definitions>

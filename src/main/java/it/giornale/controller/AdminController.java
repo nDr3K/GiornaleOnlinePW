@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import it.giornale.model.Article;
 import it.giornale.model.User;
 import it.giornale.service.ArticleService;
 import it.giornale.service.CategoryService;
@@ -84,5 +86,23 @@ public class AdminController
 		userService.modifyUser(user);
 		
 		return "redirect:/admin";
+	}
+	
+	@GetMapping("/hidearticle")
+	public String changeArticleVisibility(@RequestParam("id") String id)
+	{
+		Article article = articleService.getArticleById(Integer.parseInt(id));
+		if (article.isVisible())
+		{
+			article.setVisible(false);
+		}
+		else
+		{
+			article.setVisible(true);
+			article.getUsers().clear();
+		}
+		
+		articleService.update(article);
+		return "redirect:/admin";	
 	}
 }

@@ -4,14 +4,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
 <div class="container">
 	<div class="profiloTitolo">
 		<h3>IL MIO PROFILO</h3>
 	</div>
 	<div class="immagine">
-		<span><img class="profilo"
-			src="Pogba.Francia.2020.212.1400x840.jpg"></span>
+		<span><img class="profilo" src="Pogba.Francia.2020.212.1400x840.jpg"></span>
 		<div class="icona-tema">
 			<img id="cambiaTema" src="cambiatemagiallo.png">
 		</div>

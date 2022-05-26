@@ -13,10 +13,11 @@
 			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 align-items-center">
 				<li><img src="static/image/iconaDark.png" style="margin-right:20px"/></li>
 				<li><a class="nav-link text-white px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/"/>'>Home</a></li>
-				<li><a class="nav-link text-white px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/categories"/>'>Categories</a></li>
+				<li><a class="nav-link text-white px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/categories?id=0"/>'>Categories</a></li>
 			</ul>
-			<form class="col-10 col-lg-auto mb-3 mb-lg-0 me-lg-4" role="search">
-				<input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Ricerca..." aria-label="Ricerca">
+			<form class="d-flex col-10 col-lg-auto mb-3 mb-lg-0 me-lg-4" action="articles" method="GET">
+				<input type="search" class="form-control form-control-dark text-white bg-dark" name="searchText" placeholder="Ricerca..." aria-label="Ricerca">
+				<input class="btn btn-warning" type="submit" value="Cerca"/>
 			</form>
 			<c:if test="${sessionScope.user == null}">
 				<div class="d-flex text-end">

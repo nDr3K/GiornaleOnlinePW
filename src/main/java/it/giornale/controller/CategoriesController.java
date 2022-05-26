@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import it.giornale.service.ArticleService;
 import it.giornale.service.CategoryService;
 
@@ -21,9 +23,19 @@ public class CategoriesController
 	private ArticleService articleService;
 	
 	@GetMapping
-	public String getPage(Model model)
+	public String getPage(Model model, @RequestParam(name = "id") String id)
 	{
-		model.addAttribute("categories", categoryService.readAll());
+		if (!id.equals("0"))
+		{
+			model.addAttribute("categories",categoryService.filterById(Integer.parseInt(id)));
+			model.addAttribute("mode", true);
+		}
+		else
+		{
+			model.addAttribute("categories", categoryService.readAll());
+			model.addAttribute("mode", false);
+		}
+			
 		model.addAttribute("articles", articleService.readAll());
 		return "categories";
 	}

@@ -11,4 +11,5 @@ public interface CategoryService
 	void remove(Category c);
 	List<Category> readAll();
 	Category readById(int id);
+	List<Category> filterById(int id);
 }

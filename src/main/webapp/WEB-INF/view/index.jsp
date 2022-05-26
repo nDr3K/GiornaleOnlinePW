@@ -28,7 +28,7 @@
 				        		<span class="card-text">Pubblicato il: ${article.date}</span>
 				        	</div>
 				        	<div class="col-6">
-				        		<span class="card-text">Categoria: ${article.category.description}</span>
+				        		<a href='<spring:url value="/categories?id=${article.category.id}"/>' class="nav-link nav-link-white card-text">Categoria: ${article.category.description}</a>
 				        	</div>
 				        </div>
 			        </div>

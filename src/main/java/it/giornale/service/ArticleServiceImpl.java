@@ -114,5 +114,18 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		return list;
 	}
+
+	@Override
+	public List<Article> searchByKeywords(String keyword) {
+		
+		List<Article> list = articleDao.readAll();
+				
+		list = list 
+				.stream()
+				.filter(b -> b.getKeywords().toLowerCase().contains(keyword.toLowerCase()))
+				.collect(Collectors.toList());
+		
+		return list;
+	}
 	
 }

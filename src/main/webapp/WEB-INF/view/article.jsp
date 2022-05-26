@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>	
 
+<c:if test="${!article.visible}">
 <div class="container-fluid">
 	<div class="card-group bg-warning">
 	    <div class="card mb-3" align="center" style="max-width: 80%;margin: 20px; border-radius: 5px; border: 2px solid black">
@@ -33,7 +34,7 @@
 	                <hr>
 	                <div class="row g-0">
 	                    <div class="col-md-6" >
-	                        <p class="card-text">di ${article.author}</p>
+	                        <a class="nav-link nav-link-white card-text" href="articles?author=${article.author}">di ${article.author}</a>
 	                    </div>
 	                    <div class="col-md-6">
 	                        <p class="card-text">${article.date}</p>
@@ -69,3 +70,4 @@
 	    </ul>
 	</nav>
 </div>
+</c:if>
