@@ -1,4 +1,4 @@
-package it.giornale.dao;
+ package it.giornale.dao;
 
 import java.util.List;
 

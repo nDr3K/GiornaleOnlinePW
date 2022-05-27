@@ -20,7 +20,7 @@
 								<label for="image">Inserisci immagine</label>
 								<input type="file" class="form-control mt-2 btn" id="image" name="image">
 								<input type="hidden" value="${user.id}" name="id"/>
-								<input type="submit" value="Conferma" class="btn btn-primary mt-4">
+								<input type="submit" value="Conferma" class="btn btn-main mt-4">
 							</form>
 						</div>
 					</div>
@@ -73,7 +73,7 @@
 								</div>	
 								<div class="row">
 									<div class="col-12 text-center">
-										<input type="submit" value="Cambia mail" class="btn btn-primary mt-4">
+										<input type="submit" value="Cambia mail" class="btn btn-main mt-4">
 									</div>
 								</div>
 							</form>
@@ -104,7 +104,7 @@
 								</div>
 								<div class="row">
 									<div class="col-12 text-center">
-										<input type="submit" value="Cambia password" class="btn btn-primary mt-4">
+										<input type="submit" value="Cambia password" class="btn btn-main mt-4">
 									</div>
 								</div>
 							</form>

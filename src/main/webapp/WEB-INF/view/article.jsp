@@ -23,10 +23,10 @@
 	                    <c:if test="${sessionScope.user != null}">
 	                        <c:choose>
 	                            <c:when test="${favorite}">
-	                                <a class="btn btn-warning" href='<spring:url value="/article/remove?id=${article.id}"/>'>Rimuovi dai preferiti</a>
+	                                <a class="btn btn-second" href='<spring:url value="/article/remove?id=${article.id}"/>'>Rimuovi dai preferiti</a>
 	                            </c:when>
 	                            <c:otherwise>
-	                                <a class="btn btn-warning" href='<spring:url value="/article/add?id=${article.id}"/>'>Aggiungi ai preferiti</a>
+	                                <a class="btn btn-second" href='<spring:url value="/article/add?id=${article.id}"/>'>Aggiungi ai preferiti</a>
 	                            </c:otherwise>
 	                        </c:choose>
 	                    </c:if>
@@ -62,12 +62,12 @@
 	<nav aria-label="Page navigation example" style="justify-content: center; display: flex; margin-top:30px;" >
 	    <ul class="pagination" >
 	        <li class="page-item">
-	            <a class="btn btn-warning" href='<spring:url value="/article/previous?id=${article.id}"/>' aria-label="Previous" style="margin-right: 200px;">
+	            <a class="btn btn-second" href='<spring:url value="/article/previous?id=${article.id}"/>' aria-label="Previous" style="margin-right: 200px;">
 	                <span aria-hidden="true">&laquo; Articolo precedente</span>
 	            </a>
 	        </li>
 	        <li>
-	            <a class="btn btn-warning" href='<spring:url value="/article/next?id=${article.id}"/>' aria-label="Next" style="margin-left: 200px;">
+	            <a class="btn btn-second" href='<spring:url value="/article/next?id=${article.id}"/>' aria-label="Next" style="margin-left: 200px;">
 	                <span aria-hidden="true">Articolo successivo &raquo;</span>
 	            </a>
 	        </li>

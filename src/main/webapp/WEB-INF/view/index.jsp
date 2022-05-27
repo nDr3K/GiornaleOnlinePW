@@ -40,7 +40,7 @@
 	                </div>
 	                <div class="cardfooter">
 			            <div class="col-md-8">
-			            	<a href='<spring:url value="article?id=${article.id}"/>' class="btn btn-warning">Vai alla notizia</a>
+			            	<a href='<spring:url value="article?id=${article.id}"/>' class="btn btn-second">Vai alla notizia</a>
 			            </div>
 			            <div class="row">
 				        	<div class="col-6">

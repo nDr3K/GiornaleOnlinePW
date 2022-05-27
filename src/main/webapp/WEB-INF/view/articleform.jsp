@@ -55,12 +55,12 @@
 					<div class="row">
 						<div class="col-6">
 							<label for="image">Inserisci immagine</label>
-							<input type="file" class="form-control mt-2 btn-warning" id="image" name="image">
+							<input type="file" class="form-control mt-2 btn-second" id="image" name="image">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 text-center">
-							<input type="submit" value="${id > 0 ? 'Aggiorna Articolo' : 'Aggiungi Articolo'}" class="btn btn-primary mt-4">
+							<input type="submit" value="${id > 0 ? 'Aggiorna Articolo' : 'Aggiungi Articolo'}" class="btn btn-main mt-4">
 						</div>
 					</div>
 				</form>

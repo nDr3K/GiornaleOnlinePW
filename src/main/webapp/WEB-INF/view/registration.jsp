@@ -34,7 +34,7 @@
 						</div>
 						<div class="form-button mt-3 d-flex justify-content-center">
 							<form:input path="image" id="image" type="hidden" value="static/users/defaultUserIcon.png"/>
-							<button id="submit" type="submit" class="btn btn-primary">Registrati</button>
+							<button id="submit" type="submit" class="btn btn-main">Registrati</button>
 						</div>
 					</form:form>
 				</div>

@@ -32,7 +32,7 @@
 							</div>
 						</div>
 						<div class="form-button mt-3  d-flex justify-content-center">
-							<input type="submit" value="Accedi" class="btn btn-primary mt-4">
+							<input type="submit" value="Accedi" class="btn btn-main mt-4">
 						</div>
 					</form:form>
 				</div>

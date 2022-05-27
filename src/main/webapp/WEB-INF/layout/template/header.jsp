@@ -3,26 +3,26 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 				
 <div class="d-flex justify-content-center bg-nav">
-	<img src="static/image/bannerDark.png" style="height:'50px'; width:'auto'" />
+	<img src="<spring:theme code='styleBanner'/>" style="height:'50px'; width:'auto'" />
 </div>
 
 <nav class="p-3 bg-nav">
 	<div class="container">
 		<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
 			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 align-items-center">
-				<li><img src="static/image/iconaDark.png" style="margin-right:20px"/></li>
+				<li><img src="<spring:theme code='styleIcon'/>" style="margin-right:20px"/></li>
 				<li><a class="nav-link text-nav px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/"/>'>Home</a></li>
 				<li><a class="nav-link text-nav px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/categories?id=0"/>'>Categories</a></li>
 			</ul>
 			<form class="d-flex col-10 col-lg-auto mb-lg-0 me-lg-4" action="articles" method="GET">
 				<input type="search" class="form-control searchBar" name="searchText" placeholder="Ricerca..." aria-label="Ricerca">
-				<input class="btn btn-warning" type="submit" value="Cerca"/>
+				<input class="btn btn-main" type="submit" value="Cerca"/>
 			</form>
 			<c:if test="${sessionScope.user == null}">
 				<div class="d-flex text-end">
-					<a class="nav-link btn btn-outline-light me-2 text-secondary" href='<spring:url value="/login"/>'>
+					<a class="nav-link btn btn-alternative me-2" href='<spring:url value="/login"/>'>
 					<font style="text-align: center;">Accedi</font></a> 
-					<a class="nav-link btn btn-warning text-secondary" href='<spring:url value="/registration"/>'>Registrati</a>
+					<a class="nav-link btn btn-main" href='<spring:url value="/registration"/>'>Registrati</a>
 				</div>
 
 			</c:if>
@@ -42,8 +42,8 @@
 			</c:if>
 			<div>
 				<form action="<c:url value='/'/>" method="POST" name="themeChangeForm" id="themeChangeForm">
-					<button class="disappear" type="submit" name="theme" value="light"><i style="font-size:2rem" class="fa-solid fa-sun"></i></button>
-	                <button class="disappear" type="submit" name="theme" value="dark"><i style="font-size:2rem" class="fa-solid fa-moon"></i></button>
+					<button class="disappear" type="submit" name="theme" value="light"><i style="font-size:2rem" class="fa-solid fa-sun iconColor iconLight"></i></button>
+	                <button class="disappear" type="submit" name="theme" value="dark"><i style="font-size:2rem" class="fa-solid fa-moon iconColor iconDark"></i></button>
 				</form>
 			</div>
 		</div>

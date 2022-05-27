@@ -379,3 +379,11 @@ a:hover{
 	border:none;
 	background-color: inherit;
 }
+
+.iconColor {
+	color:  black;
+}
+
+.iconLight {
+	display:none;
+}
