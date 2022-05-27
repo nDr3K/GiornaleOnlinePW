@@ -151,7 +151,7 @@ button.formatButtonCategory:hover{
     margin-top: 8px;
 }
 
-.btn-primary{
+.btn-main{
     margin: 0 auto;
     background-color: #212529;
     color: #FFC107;
@@ -160,14 +160,14 @@ button.formatButtonCategory:hover{
     box-shadow: none;
 }
 
-.btn-primary:hover{
+.btn-main:hover{
 	background-color: #111518;
 	outline: none;
     border: 0px;
     box-shadow: none;
 }
 
-.btn-white{
+.btn-admin{
     margin: 0 auto;
     background-color: #32363a;
     color: #FFC107;
@@ -176,7 +176,7 @@ button.formatButtonCategory:hover{
     box-shadow: none;
 }
 
-.btn-white:hover{
+.btn-admin:hover{
 	background-color: #43472b
 }
 
@@ -188,7 +188,7 @@ button.formatButtonCategory:hover{
     box-shadow: none;
 }
 
-.btn-warning{
+.btn-second{
     margin: 0 auto;
     background-color: #FFC107;
     color: #212529;
@@ -197,9 +197,23 @@ button.formatButtonCategory:hover{
     box-shadow: none;
 }
 
-.btn-warning{
+.btn-second:hover{
 	background-color: #d29a11;
 	color: #212529;
+}
+
+.btn-alternative{
+    margin: 0 auto;
+    background-color: #a9a9a9;
+    color: #212529;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+}
+
+.btn-alternative:hover{
+	background-color: #808080;
+	color: white;
 }
 
 .btn-dropdown{

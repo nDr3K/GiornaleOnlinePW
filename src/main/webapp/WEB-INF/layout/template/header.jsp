@@ -16,13 +16,13 @@
 			</ul>
 			<form class="d-flex col-10 col-lg-auto mb-lg-0 me-lg-4" action="articles" method="GET">
 				<input type="search" class="form-control searchBar" name="searchText" placeholder="Ricerca..." aria-label="Ricerca">
-				<input class="btn btn-main" type="submit" value="Cerca"/>
+				<input class="btn btn-second" type="submit" value="Cerca"/>
 			</form>
 			<c:if test="${sessionScope.user == null}">
 				<div class="d-flex text-end">
 					<a class="nav-link btn btn-alternative me-2" href='<spring:url value="/login"/>'>
 					<font style="text-align: center;">Accedi</font></a> 
-					<a class="nav-link btn btn-main" href='<spring:url value="/registration"/>'>Registrati</a>
+					<a class="nav-link btn btn-second" href='<spring:url value="/registration"/>'>Registrati</a>
 				</div>
 
 			</c:if>

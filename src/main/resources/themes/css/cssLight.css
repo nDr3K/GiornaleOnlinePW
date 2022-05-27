@@ -160,7 +160,7 @@ tr{
 }
 
 
-.btn-primary{
+.btn-main{
     margin: 0 auto;
     background-color: whitesmoke;
     color: black;
@@ -168,14 +168,14 @@ tr{
     border: 1px solid black;
     box-shadow: none;
 }
-.btn-primary:hover{
+.btn-main:hover{
     background-color: black;
     color: white;
     outline: none;
     box-shadow: none;
 }
 
-.btn-white{
+.btn-admin{
     margin: 0 auto;
     background-color: whitesmoke;
     color: black;
@@ -184,7 +184,7 @@ tr{
     box-shadow: none;
 }
 
-btn-white:hover{
+btn-admin:hover{
     background-color: whitesmoke;
 }
 
@@ -197,18 +197,32 @@ btn-white:hover{
 }
 
 
-.btn-warning:hover{
+.btn-second:hover{
     background-color: black;
     color: whitesmoke;
 }
 
-.btn-warning{
+.btn-second{
     margin: 0 auto;
     background-color: white;
     color: #212529;
     outline: none;
     border: 1px solid black;
     box-shadow: none;
+}
+
+.btn-alternative{
+    margin: 0 auto;
+    background-color: #a9a9a9;
+    color: #212529;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+}
+
+.btn-alternative:hover{
+	background-color: #808080;
+	color: white;
 }
 
 .btn-dropdown:hover{
