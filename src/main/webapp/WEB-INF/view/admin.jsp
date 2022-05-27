@@ -24,6 +24,18 @@
 			<div class="card-body">
 				<table class="table">
 				<c:forEach items="${articles}" var="article">
+					<div id="article${article.id}" class="checkBox" style="display: none ">
+					    <br/>
+					    <h4 class="checkBoxFixed">Sei sicuro di voler cancellare l'articolo?</h4> <br/>
+					    <div class="row">
+					        <div class="col-6 text-center">
+					            <a class="btn btn-danger" href='<spring:url value="admin/deletearticle?id=${article.id}"/>'>Elimina</a>
+					        </div>
+					        <div class="col-6 text-center">
+					        	<a class="btn btn-admin" onclick="showElements('article${article.id}')">Annulla</a>
+					        </div>
+					    </div>
+					</div>
 					<tr>
 						<td width="70%">	
 							<a class="nav-link nav-link-white" href='<spring:url value="/article?id=${article.id}"/>'>${article.title}</a>
@@ -35,7 +47,7 @@
 							<a class="btn btn-admin" href='<spring:url value="/articleform?id=${article.id}"/>'>Modifica</a>
 						</td>
 						<td valign="middle" width="10%">
-							<a class="btn btn-danger" href='<spring:url value="admin/deletearticle?id=${article.id}"/>'>Elimina</a>
+							<button class="btn btn-danger" onclick="showElements('article${article.id}')">Elimina</button>
 						</td>
 					</tr>
 				</c:forEach>
@@ -64,6 +76,18 @@
 			<div class="card-body">
 				<table class="table">
 				<c:forEach items="${categories}" var="category">
+					<div id="category${category.id}" class="checkBox" style="display: none ">
+					    <br/>
+					    <h4 class="checkBoxFixed">Sei sicuro di voler cancellare la categoria?</h4> <br/>
+					    <div class="row">
+					        <div class="col-6 text-center">
+					            <a class="btn btn-danger" href='<spring:url value="admin/deletecategory?id=${category.id}"/>'>Elimina</a>
+					        </div>
+					        <div class="col-6 text-center">
+					        	<a class="btn btn-admin" onclick="showElements('category${category.id}')">Annulla</a>
+					        </div>
+					    </div>
+					</div>
 					<tr>
 						<td width="73%">
 							<span class="nav-link nav-link-white">${category.description}</span>
@@ -72,7 +96,7 @@
 							<a class="btn btn-admin" href='<spring:url value="/categoryform?id=${category.id}"/>'>Modifica</a>
 						</td>
 						<td valign="middle" width="10%">
-							<a class="btn btn-danger" href='<spring:url value="admin/deletecategory?id=${category.id}"/>'>Elimina</a>
+							<button class="btn btn-danger" onclick="showElements('category${category.id}')">Elimina</button>
 						</td>
 					</tr>
 				</c:forEach>
@@ -98,6 +122,18 @@
 			<div class="card-body">
 				<table class="table">
 				<c:forEach items="${users}" var="user">
+					<div id="user${user.id}" class="checkBox" style="display: none ">
+					    <br/>
+					    <h4 class="checkBoxFixed">Sei sicuro di voler cancellare l' utente?</h4> <br/>
+					    <div class="row">
+					        <div class="col-6 text-center">
+					            <a class="btn btn-danger" href='<spring:url value="admin/deleteuser?id=${user.id}"/>'>Elimina</a>
+					        </div>
+					        <div class="col-6 text-center">
+					        	<a class="btn btn-admin" onclick="showElements('user${user.id}')">Annulla</a>
+					        </div>
+					    </div>
+					</div>
 					<tr>
 						<td width="73%">
 							<span class="nav-link nav-link-white">${user.username}</span>
@@ -106,7 +142,7 @@
 							<a class="btn btn-admin" href='<spring:url value="admin/change?id=${user.id}"/>'>Cambia ruolo</a>
 						</td>
 						<td valign="middle" width="10%">
-							<a class="btn btn-danger" href='<spring:url value="admin/deleteuser?id=${user.id}"/>'>Elimina</a>
+							<button class="btn btn-danger" onclick="showElements('user${user.id}')">Elimina</button>
 						</td>
 					</tr>
 				</c:forEach>

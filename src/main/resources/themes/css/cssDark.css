@@ -414,3 +414,23 @@ tr{
 	background-color: #32363a;
 	color: #FFC107;
 }
+
+.checkBox{
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    vertical-align: middle;
+    border: 3px solid black;
+    border-radius: 4px;
+    position: fixed;
+    z-index:60;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #F5F5F5;
+}
+
+.checkBoxFixed{
+    text-align: center;
+    color: #212529;
+}

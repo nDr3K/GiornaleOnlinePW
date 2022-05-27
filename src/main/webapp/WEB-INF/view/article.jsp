@@ -52,7 +52,7 @@
 	            <div class="card-title"></div>
 	            <c:forEach items="${suggesteds}" var="suggested">
 	                <c:if test="${suggested.id != article.id}">
-	                    <a href='<spring:url value="/article?id=${suggested.id}"/>' class="nav-link">${suggested.title}</a><br>
+	                    <a href='<spring:url value="/article?id=${suggested.id}"/>' class="nav-link nav-link-white">${suggested.title}</a><br>
 	                </c:if>
 	            </c:forEach>
 	        </div>
