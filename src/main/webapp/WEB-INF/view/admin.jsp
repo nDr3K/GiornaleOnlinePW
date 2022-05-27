@@ -52,7 +52,7 @@
 							<button class="btn formatButtonCategory" type="button" onclick="showElements('categories')">Categorie</button>
 						</div>
 						<div class="col-2">
-							<a href='<spring:url value="/categoryform?id=0"/>' class="btn btn-warning">Aggiungi</a>						
+							<a href='<spring:url value="/categoryform?id=0"/>' class="btn btn-second">Aggiungi</a>						
 						</div>
 					</div>
 				</div>

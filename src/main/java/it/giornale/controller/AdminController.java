@@ -43,6 +43,7 @@ public class AdminController
 		model.addAttribute("users", userService.readAll());
 		model.addAttribute("categories", categoryService.readAll());
 		model.addAttribute("articles", articleService.readAll());
+		model.addAttribute("currentPath", "admin");
 		return "admin";
 	}
 	

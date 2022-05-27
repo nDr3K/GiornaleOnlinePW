@@ -4,9 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-	<div class="myProfile">
-		<h3>IL MIO PROFILO</h3>
-	</div>
+<div class="myProfile"><h3>IL MIO PROFILO</h3></div>
 <div class="container">
 	<div class="containerProfileImage">
 		<span><img class="profileImage mt-3" src='<spring:url value="${user.image}"/>'></span>
@@ -20,7 +18,11 @@
 								<label for="image">Inserisci immagine</label>
 								<input type="file" class="form-control mt-2 btn" id="image" name="image">
 								<input type="hidden" value="${user.id}" name="id"/>
-								<input type="submit" value="Conferma" class="btn btn-main mt-4">
+								<div class="row">
+								<div class="col-12 text-center">
+									<input type="submit" value="Conferma" class="btn btn-main mt-4">
+								</div>
+							</div>
 							</form>
 						</div>
 					</div>
@@ -41,6 +43,7 @@
 			                    <option value="">Reset</option>
 			                    <option value="light">Light</option>
 			                    <option value="dark">Dark</option>
+			                    <option value="prof">Prof</option>
 			                </select>
 			                <div class="row">
 								<div class="col-12 text-center">

@@ -401,3 +401,16 @@ tr{
 .iconDark {
 	display:none;
 }
+
+.dropdown-menu.show {
+	background-color: #212529;
+}
+
+.dropdown-item {
+	color: #FFC107;
+}
+
+.dropdown-item:hover {
+	background-color: #32363a;
+	color: #FFC107;
+}

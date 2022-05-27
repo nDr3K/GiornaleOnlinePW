@@ -43,6 +43,7 @@ public class RegistrationController
 		model.addAttribute("mailExist", mailExist);
 		model.addAttribute("user", new User());
 		model.addAttribute("role", roleService.getRole(1));
+		model.addAttribute("currentPath", "registration");
 		return "registration";
 	}
 	

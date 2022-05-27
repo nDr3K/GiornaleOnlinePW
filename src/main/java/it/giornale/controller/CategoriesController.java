@@ -35,8 +35,8 @@ public class CategoriesController
 			model.addAttribute("categories", categoryService.readAll());
 			model.addAttribute("mode", false);
 		}
-			
 		model.addAttribute("articles", articleService.readAll());
+		model.addAttribute("currentPath", "categories?id="+id);
 		return "categories";
 	}
 }

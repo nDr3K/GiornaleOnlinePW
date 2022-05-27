@@ -18,7 +18,15 @@
 			<a class="btn-close" href="index/success"></a>
 		</div>
 	</div>
-	</c:if>
+</c:if>
+<c:if test="${sessionScope.logoutSuccess}">
+	<div>
+		<div class="alert alert-success alert-dismissible mt-4" role="alert">
+			<span>Logout eseguito</span>
+			<a class="btn-close" href="index/logout"></a>
+		</div>
+	</div>
+</c:if>
 
 <div id="sottotitolo" class="text-center">
    	<h5 class="card-title divisore">ULTIME NOTIZIE</h5>

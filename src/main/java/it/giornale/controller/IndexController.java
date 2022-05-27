@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.giornale.service.ArticleService;
 
@@ -26,10 +27,9 @@ public class IndexController
 	}
 	
 	@PostMapping
-	public String changeTheme(Model model)
+	public String changeTheme(@RequestParam("currentPath") String currentPath)
 	{
-		model.addAttribute("articles", articleService.readLastTen());
-		return "index";
+		return "redirect:/" + currentPath;
 	}
 	
 	@GetMapping("/ok")
@@ -43,6 +43,13 @@ public class IndexController
 	 public String dismissSuccess(HttpSession session)
 	 {
 		session.setAttribute("loginSuccess", false);
+		return "redirect:/index";
+	 }
+	
+	@GetMapping("/logout")
+	 public String dismissLogout(HttpSession session)
+	 {
+		session.setAttribute("logoutSuccess", false);
 		return "redirect:/index";
 	 }
 }

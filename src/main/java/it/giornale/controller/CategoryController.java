@@ -40,6 +40,7 @@ public class CategoryController
 		}
 		model.addAttribute("category", category);
 		model.addAttribute("mode", mode);
+		model.addAttribute("currentPath", "categoryform?id="+id);
 		return "categoryform";
 	}
 	

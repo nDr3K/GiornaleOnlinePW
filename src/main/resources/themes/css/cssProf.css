@@ -62,7 +62,7 @@ button.formatButtonCategory:hover{
 }
 
 .nav-link-white {
-    color:#F5F5F5;
+    color:#1a1c1a;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -159,7 +159,7 @@ button.formatButtonCategory:hover{
 }
 
 .btn-main:hover{
-    background-color: #111518;
+    background-color: #f3dfc1;
     outline: none;
     border: 0px;
     box-shadow: none;
@@ -176,7 +176,7 @@ button.formatButtonCategory:hover{
 }
 
 .btn-admin:hover{
-    background-color: #43472b
+    background-color: #F2dda9;;
 }
 
 .btn-danger{
@@ -225,7 +225,7 @@ button.formatButtonCategory:hover{
 }
 
 .btn-dropdown:hover {
-    background-color: #32363a;
+    background-color: #f3dfc1;
     color: #32363a;
 }
 
@@ -283,7 +283,7 @@ input[type=file]::file-selector-button {
     background-color: #1a1c1a;
     text-align: center;
     vertical-align: center;
-    color: black;
+    color: #f3cea1;
 }
 
 .profileImage{
@@ -398,4 +398,17 @@ tr{
 
 .iconDark {
     display:none;
+}
+
+.dropdown-menu.show {
+	background-color: #f3dfc1;;
+}
+
+.dropdown-item {
+	color: #1a1c1a;
+}
+
+.dropdown-item:hover {
+	background-color: #f3cea1;
+	color: #1a1c1a;
 }

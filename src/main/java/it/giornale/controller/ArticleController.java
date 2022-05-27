@@ -52,6 +52,7 @@ public class ArticleController {
 		model.addAttribute("article", article);
 		model.addAttribute("suggesteds", suggesteds);
 		model.addAttribute("favorite", favorite);
+		model.addAttribute("currentPath", "article?id="+id);
 		return "article";
 	}
 	

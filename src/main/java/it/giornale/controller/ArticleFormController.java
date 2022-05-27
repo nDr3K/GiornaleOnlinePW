@@ -49,6 +49,7 @@ public class ArticleFormController {
 		model.addAttribute("categories", categoryService.readAll());
 		model.addAttribute("article", article);
 		model.addAttribute("mode", mode);
+		model.addAttribute("currentPath", "articleform?id="+id);
 		return "articleform";
 	}
 	

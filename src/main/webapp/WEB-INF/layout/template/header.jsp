@@ -42,6 +42,7 @@
 			</c:if>
 			<div>
 				<form action="<c:url value='/'/>" method="POST" name="themeChangeForm" id="themeChangeForm">
+					<input type="hidden" value="${currentPath}" name="currentPath">
 					<button class="disappear" type="submit" name="theme" value="light"><i style="font-size:2rem" class="fa-solid fa-sun iconColor iconLight"></i></button>
 	                <button class="disappear" type="submit" name="theme" value="dark"><i style="font-size:2rem" class="fa-solid fa-moon iconColor iconDark"></i></button>
 				</form>

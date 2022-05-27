@@ -98,11 +98,12 @@ public class UserController
 	public String logout(@RequestParam("id") String id, HttpSession session)
 	{
 		session.removeAttribute("user");
+		session.setAttribute("logoutSuccess", true);
 		return "redirect:/";
 	}
 	
 	@PostMapping("/changeavatar")
-	public String setAvatar(@RequestParam("id") String id, @RequestParam("image") MultipartFile image, HttpSession session)
+	public String setAvatar(@RequestParam("id") String id, @RequestParam("image") MultipartFile image, HttpSession session, Model model)
 	{
 		User user = userService.readById(Integer.parseInt(id));
 		 
@@ -127,7 +128,8 @@ public class UserController
 				e.printStackTrace();
 			}
 		}
-		 
+		
+		model.addAttribute("currentPath", "user?id="+id);
 		return "redirect:/user?id="+id;
 	}
 	

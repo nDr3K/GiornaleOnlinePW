@@ -25,11 +25,13 @@ public class articlesController {
 			if (searchText != null && !searchText.isEmpty()) 
 			{
 				model.addAttribute("articles",articleService.searchByKeywords(searchText));
+				model.addAttribute("currentPath", "articles?searchText="+searchText);
 			}
 			
 			if (author != null && !author.isEmpty())
 			{
 				model.addAttribute("articles", articleService.searchByAuthor(author));
+				model.addAttribute("currentPath", "articles?author="+author);
 			}
 			
 		return "articles";
