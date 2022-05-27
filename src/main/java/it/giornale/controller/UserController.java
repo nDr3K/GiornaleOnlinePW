@@ -130,4 +130,16 @@ public class UserController
 		 
 		return "redirect:/user?id="+id;
 	}
+	
+	@PostMapping("/changetheme")
+	public String changeTheme(@RequestParam("id") String id, Model model)
+	{
+		User user = userService.readById(Integer.parseInt(id));
+		model.addAttribute("user", user);
+		model.addAttribute("articles", user.getFavorites());
+		model.addAttribute("weak", weak);
+		model.addAttribute("notSame", notSame);
+		model.addAttribute("notMatches", notMatches);
+		return "redirect:/user?id="+id;
+	}
 }

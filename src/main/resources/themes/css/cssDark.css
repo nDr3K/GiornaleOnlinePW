@@ -20,7 +20,7 @@ body{
 }
 
 .card-text{
-    color: white;
+    color: #FFFFFF;
 }
 .divisore{
     background-color: #FFC107;
@@ -162,6 +162,7 @@ button.formatButtonCategory:hover{
 
 .btn-main:hover{
 	background-color: #111518;
+	color: #FFC107;
 	outline: none;
     border: 0px;
     box-shadow: none;
@@ -213,7 +214,7 @@ button.formatButtonCategory:hover{
 
 .btn-alternative:hover{
 	background-color: #808080;
-	color: white;
+	color: #FFFFFF;
 }
 
 .btn-dropdown{
@@ -325,7 +326,7 @@ input[type=file]::file-selector-button {
 }
 a{
     text-decoration: none;
-    color: white;
+    color: #FFFFFF;
 }
 
 a:hover{
@@ -362,13 +363,13 @@ tr{
 
 .searchBar{
     background-color: #212529;
-    color: whitesmoke;
+    color: #F5F5F5;
 }
 
 .searchBar:focus{
     background-color: #212529;
     box-shadow: none;
-    color: whitesmoke;
+    color: #F5F5F5;
 }
 
 .searchBar::placeholder{

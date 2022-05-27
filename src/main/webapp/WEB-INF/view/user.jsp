@@ -10,7 +10,7 @@
 <div class="container">
 	<div class="containerProfileImage">
 		<span><img class="profileImage mt-3" src='<spring:url value="${user.image}"/>'></span>
-		<div class="row mt-3 justify-content-center">
+		<div class="row mt-4 justify-content-center">
 			<div class="col-3">
 				<div class="form-body">
 					<div class="form-content">
@@ -27,8 +27,30 @@
 				</div>
 			</div>
 		</div>
-		<div class="icona-tema">
-			<img id="cambiaTema" src="cambiatemagiallo.png">
+	</div>
+	<div class="form-body" style="clear:both">
+		<div class="row">
+			<div class="form-holder">
+				<div class="form-content">
+					<div class="form-items">
+						<form action="user/changetheme" method="POST" name="themeChangeForm" id="themeChangeForm">
+							<input type="hidden" value="${user.id}" name="id"/>
+			                <h3>Cambia tema</h3>
+							<p></p>
+			                <select id="theme" name="theme">
+			                    <option value="">Reset</option>
+			                    <option value="light">Light</option>
+			                    <option value="dark">Dark</option>
+			                </select>
+			                <div class="row">
+								<div class="col-12 text-center">
+									<input type="submit" class="btn btn-main mt-4">
+								</div>
+							</div>
+			            </form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="alignmentFavorite" style="clear:both">
@@ -115,5 +137,9 @@
 		</div>
 	</div>
 </div>
-
+ <script type="text/javascript">
+            function submitForm() {
+                document.themeChangeForm.submit();
+            }
+        </script>
 <script src="<c:url value="/static/javascript/script.js" />"></script>
