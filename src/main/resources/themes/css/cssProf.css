@@ -432,3 +432,14 @@ tr{
     text-align: center;
     color: #212529;
 }
+
+.container.mw-100 {
+	background-color: #f3cea1;
+}
+
+.line {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #1a1c1a;
+}

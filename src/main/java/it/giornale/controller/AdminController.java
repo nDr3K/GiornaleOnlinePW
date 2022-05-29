@@ -49,9 +49,15 @@ public class AdminController
 	
 	//cancella utenti
 	@GetMapping("/deleteuser")
-	public String deleteUser(@RequestParam("id") String id)
+	public String deleteUser(@RequestParam("id") String id, HttpSession session)
 	{
 		userService.deleteUser(userService.readById(Integer.parseInt(id)));
+		//controllo cancellazione se stessi
+		if (Integer.parseInt(id) == ((User)session.getAttribute("user")).getId())
+		{
+			session.removeAttribute("user");
+			return "redirect:/index";
+		}
 		return "redirect:/admin";
 	}
 	
@@ -73,7 +79,7 @@ public class AdminController
 	
 	//cambia ruolo
 	@GetMapping("/change")
-	public String changeRole(@RequestParam("id") String id)
+	public String changeRole(@RequestParam("id") String id, HttpSession session)
 	{
 		User user = userService.readById(Integer.parseInt(id));
 		if (user.getRole().getId() == 1)
@@ -85,6 +91,12 @@ public class AdminController
 			user.setRole(roleService.getRole(1));
 		}
 		userService.modifyUser(user);
+		//controllo cambio ruolo a se stessi
+		if (Integer.parseInt(id) == ((User)session.getAttribute("user")).getId())
+		{
+			session.removeAttribute("user");
+			return "redirect:/index";
+		}
 		
 		return "redirect:/admin";
 	}

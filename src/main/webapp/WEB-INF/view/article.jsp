@@ -10,7 +10,7 @@
 	    <div class="card mb-3" align="center" style="max-width: 80%;margin: 20px; border-radius: 5px; border: 2px solid black">
 	        <div class="row g-0 backgroundArticle">
 	            <div class="col-md-12 " align="center">
-	                <div class="card-body">
+	                <div class="card-body line">
 	                    <h5 class="card-title" style="text-align: left">${article.title}</h5>
 	                </div>
 	                <div class="row g-0">

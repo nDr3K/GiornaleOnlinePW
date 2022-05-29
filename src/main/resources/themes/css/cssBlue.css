@@ -1,28 +1,28 @@
 body{
-    background-color: #F0E68D;
+    background-color: #112883;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    color: #555555;
+    color: #eeeeea;
 }
 
 .mb-3{
-    border: 2px solid #555555;
-    background-color: #BDB76B;
+    border: 2px solid #293752;
+    background-color: #112883;
 }
 
 .card-title{
-    color: #555555;
+    color: #eeeeea;
 }
 
 .card-text{
-    color: #989898;
+    color: #c9b89b;
 }
 .divisore{
-    background-color: #555555;
-    color: #BDB76B;
+    background-color: #eeeeea;
+    color: #112883;
 }
 #cerca{
     border: none;
@@ -31,17 +31,17 @@ body{
 /*Categoria*/
 
 .card-body{
-    border: 2px solid #555555;
-    background-color: #BDB76B;
+    border: 2px solid #eeeeea;
+    background-color: #293752;
     border-radius: 4px;
 }
 
 .cardfooter {
-    background-color: #BDB76B;
+    background-color: #293752;
 }
 
 button.formatButtonCategory ,button.formatButtonCategory:focus, button.formatButtonCategory:active, button.formatButtonCategory:active:focus{
-    color: #555555;
+    color: #eeeeea;
     font-size:15px;
     width: 100%;
     height: 100%;
@@ -49,7 +49,7 @@ button.formatButtonCategory ,button.formatButtonCategory:focus, button.formatBut
 }
 
 button.formatButtonCategory:hover{
-    color: #CCCCCC;
+    color: #e2dccb;
 }
 
 .card{
@@ -58,15 +58,15 @@ button.formatButtonCategory:hover{
 }
 
 .nav-link {
-    color:#555555;
+    color:#eeeeea;
 }
 
 .nav-link-white {
-    color:#F5F5F5;
+    color:#eeeeea;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #CCCCCC;
+    color: #e2dccb;
 }
 
 /*Registrazione-User*/
@@ -95,7 +95,7 @@ button.formatButtonCategory:hover{
 }
 
 .form-content .form-items {
-    border: 3px solid #555555;
+    border: 3px solid #eeeeea;
     padding: 40px;
     display: inline-block;
     width: 100%;
@@ -109,7 +109,7 @@ button.formatButtonCategory:hover{
 }
 
 .form-content h3 {
-    color: #555555;
+    color: #eeeeea;
     text-align: center;
     font-size: 28px;
     font-weight: 600;
@@ -121,7 +121,7 @@ button.formatButtonCategory:hover{
 }
 
 .form-content p {
-    color: #555555;
+    color: #eeeeea;
     text-align: center;
     font-size: 17px;
     font-weight: 300;
@@ -130,7 +130,7 @@ button.formatButtonCategory:hover{
 }
 
 .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
-    color: #555555;
+    color: #eeeeea;
 }
 
 .form-content input[type=text], .form-content input[type=password], .form-content input[type=file], .form-content input[type=email], .form-content select {
@@ -140,10 +140,10 @@ button.formatButtonCategory:hover{
     border: 0;
     outline: 0;
     border-radius: 6px;
-    background-color: #BDB76B;
+    background-color: #293752;
     font-size: 15px;
     font-weight: 300;
-    color: #555555;
+    color: #eeeeea;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     margin-top: 8px;
@@ -151,37 +151,37 @@ button.formatButtonCategory:hover{
 
 .btn-main{
     margin: 0 auto;
-    background-color: #BDB76B;
-    color: #555555;
+    background-color: #293752;
+    color: #eeeeea;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
 .btn-main:hover{
-    background-color: #979256;
+    background-color: #c9b89b;
     outline: none;
     border: 0px;
     box-shadow: none;
-    color: #555555;
+    color: #eeeeea;
 }
 
 .btn-admin{
     margin: 0 auto;
-    background-color: #F0E68D;
-    color: #555555;
+    background-color: #112883;
+    color: #eeeeea;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
 .btn-admin:hover{
-    background-color: #BDB76B;
+    background-color: #697386
 }
 
 .btn-danger{
     margin: 0 auto;
-    background-color: #764C29;
+    background-color: #D92906;
     outline: none;
     border: 0px;
     box-shadow: none;
@@ -189,44 +189,44 @@ button.formatButtonCategory:hover{
 
 .btn-second{
     margin: 0 auto;
-    background-color: #555555;
-    color: #BDB76B;
+    background-color: #eeeeea;
+    color: #112883;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
 .btn-second:hover{
-    background-color: #CCCCCC;
-    color: #BDB76B;
+    background-color: #c9b89b;
+    color: #112883;
 }
 
 .btn-alternative{
     margin: 0 auto;
-    background-color: #a9a9a9;
-    color: #BDB76B;
+    background-color: #FFFFFF;
+    color: #112883;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
 .btn-alternative:hover{
-    background-color: #808080;
-    color: #989898;
+    background-color: #F5F5F5;
+    color: #e2dccb;
 }
 
 .btn-dropdown{
     margin: 0 auto;
-    background-color: #555555;
-    color: #BDB76B;
+    background-color: #eeeeea;
+    color: #112883;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
 .btn-dropdown:hover {
-    background-color: #CCCCCC;
-    color: #F0E68D;
+    background-color: #e2dccb;
+    color: #112883;
 }
 
 .form-content textarea {
@@ -235,11 +235,11 @@ button.formatButtonCategory:hover{
     padding: 8px 20px;
     border-radius: 6px;
     text-align: left;
-    background-color: #BDB76B;
+    background-color: #293752;
     border: 0;
     font-size: 15px;
     font-weight: 300;
-    color:  #555555;
+    color:  #eeeeea;
     outline: none;
     resize: none;
     -webkit-transition: none;
@@ -249,8 +249,8 @@ button.formatButtonCategory:hover{
 }
 
 .form-content textarea:focus {
-    background-color:  #BDB76B;
-    color:  #555555;
+    background-color:  #293752;
+    color:  #eeeeea;
 }
 
 
@@ -263,33 +263,33 @@ button.formatButtonCategory:hover{
 }
 
 ::placeholder{
-    color: #555555;
+    color: #eeeeea;
 }
 
 input[type=file]::file-selector-button {
-    background-color: #555555;
-    color: #BDB76B;
+    background-color: #eeeeea;
+    color: #293752;
 }
 
 .backgroundArticle{
-    background-color: #BDB76B;
-    border: 1px solid #555555;
+    background-color: #112883;
+    border: 1px solid #eeeeea;
     border-radius: 4px;
 }
 
 /*user*/
 
 .myProfile{
-    background-color: #555555;
+    background-color: #eeeeea;
     text-align: center;
     vertical-align: center;
-    color: #F0E68D;
+    color: #112883;
 }
 
 .profileImage{
     width: 300px;
     height: 300px;
-    border: 1px solid #555555;
+    border: 1px solid #eeeeea;
 }
 
 .containerProfileImage{
@@ -302,39 +302,39 @@ input[type=file]::file-selector-button {
 
     margin-top: 10px;
     border-radius: 4px;
-    background-color: #F0E68D;
+    background-color: #293752;
     padding: 10px;
-    border: 1px solid #555555;
+    border: 1px solid #eeeeea;
     width:100%;
 }
 
 .setBackGroundFavoritesDiv{
-    background-color: #F0E68D;
+    background-color: #293752;
     border: none;
 }
 
 .setPositionFavoritesDiv{
 
     text-align: center;
-    background-color: #F0E68D;
-    color: #555555;
+    background-color: #293752;
+    color: #eeeeea;
     border: 2px solid;
     margin-top: 15px;
     border-radius: 4px;
 }
 a{
     text-decoration: none;
-    color: #989898;
+    color: #e2dccb;
 }
 
 a:hover{
-    color:#555555 ;
+    color:#eeeeea ;
 }
 
 .submitButton{
-    background-color: #F0E68D;
-    border: 1px solid #555555;
-    color:#555555 ;
+    background-color: #293752;
+    border: 1px solid #eeeeea;
+    color:#eeeeea ;
 }
 
 .alignmentFavorite{
@@ -344,34 +344,34 @@ a:hover{
 }
 
 .setBorderArticleHome{
-    border: 1px solid #555555;
+    border: 1px solid #eeeeea;
 }
 
 tr{
-    border-bottom: 1px solid #555555;
+    border-bottom: 1px solid #eeeeea;
 }
 
 .text-nav{
-    color: #555555;
+    color: #eeeeea;
 }
 
 .text-nav:hover{
-    color: #CCCCCC;
+    color: #c9b89b;
 }
 
 .searchBar{
-    background-color: #BDB76B;
-    color: #555555;
+    background-color: #112883;
+    color: #eeeeea;
 }
 
 .searchBar:focus{
-    background-color: #BDB76B;
+    background-color: #112883;
     box-shadow: none;
-    color: #555555;
+    color: #eeeeea;
 }
 
 .searchBar::placeholder{
-    color: #555555;
+    color: #eeeeea;
 }
 
 .searchBar::-webkit-search-cancel-button{
@@ -379,7 +379,7 @@ tr{
 }
 
 .bg-nav {
-    background-color: #BDB76B;
+    background-color: #293752;
 }
 
 .btn:focus, .btn:active {
@@ -393,9 +393,53 @@ tr{
 }
 
 .iconColor {
-    color:  #555555;
+    color:  #eeeeea;
 }
 
 .iconDark {
     display:none;
+}
+
+.dropdown-menu.show {
+	background-color: #212529;
+}
+
+.dropdown-item {
+	color: #e2dccb;
+}
+
+.dropdown-item:hover {
+	background-color: #293752;
+	color: #e2dccb;
+}
+
+.checkBox{
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    vertical-align: middle;
+    border: 3px solid black;
+    border-radius: 4px;
+    position: fixed;
+    z-index:60;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #F5F5F5;
+}
+
+.checkBoxFixed{
+    text-align: center;
+    color: #212529;
+}
+
+.container.mw-100 {
+	background-color: #293752;
+}
+
+.line {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #e2dccb;
 }

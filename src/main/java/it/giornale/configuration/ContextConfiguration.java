@@ -208,7 +208,7 @@ public class ContextConfiguration implements WebMvcConfigurer
 	@Bean
 	public ThemeResolver themeResolver() {
 	    CookieThemeResolver themeResolver = new CookieThemeResolver();
-	    themeResolver.setDefaultThemeName("light");
+	    themeResolver.setDefaultThemeName("dark");
 	    return themeResolver;
 	}
 	

@@ -434,3 +434,14 @@ tr{
     text-align: center;
     color: #212529;
 }
+
+.container.mw-100 {
+	background-color: #212529;
+}
+
+.line {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #FFC107;
+}

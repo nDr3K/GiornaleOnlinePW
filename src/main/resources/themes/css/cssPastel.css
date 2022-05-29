@@ -1,35 +1,28 @@
-@charset "UTF-8";
-
 body{
-    background-color: #eeeeee;
+    background-color: #ff95b5;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    color: black;
-}
-
-.btn:focus, .btn:hover {
-	outline:none;
-	box-shadow: none;
+    color: #fdfbf9;
 }
 
 .mb-3{
-    border: 2px solid black;
-    background-color: whitesmoke;
+    border: 2px solid #ec698f;
+    background-color: #ff95b5;
 }
 
 .card-title{
-    color: black;
+    color: #fdfbf9;
 }
 
 .card-text{
-    color: black;
+    color: #ffe4ef;
 }
 .divisore{
-    background-color: black;
-    color: white;
+    background-color: #fdfbf9;
+    color: #ff95b5;
 }
 #cerca{
     border: none;
@@ -38,23 +31,25 @@ body{
 /*Categoria*/
 
 .card-body{
-    border: 2px solid black;
-    background-color: whitesmoke;
+    border: 2px solid #fdfbf9;
+    background-color: #ec698f;
     border-radius: 4px;
 }
 
+.cardfooter {
+    background-color: #ec698f;
+}
 
 button.formatButtonCategory ,button.formatButtonCategory:focus, button.formatButtonCategory:active, button.formatButtonCategory:active:focus{
-    color: black;
+    color: #fdfbf9;
     font-size:15px;
     width: 100%;
     height: 100%;
     box-shadow: none;
-
 }
 
 button.formatButtonCategory:hover{
-    color: lightskyblue;
+    color: #fdfbf9;
 }
 
 .card{
@@ -62,21 +57,17 @@ button.formatButtonCategory:hover{
     border: none;
 }
 
-tr{
-    border-bottom: 1px solid black;
-}
 .nav-link {
-    color:white;
+    color:#fdfbf9;
 }
 
 .nav-link-white {
-    color: black;
+    color:#fdfbf9;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: lightskyblue;
+    color: #fdfbf9;
 }
-
 
 /*Registrazione-User*/
 
@@ -104,7 +95,7 @@ tr{
 }
 
 .form-content .form-items {
-    border: 3px solid black;
+    border: 3px solid #fdfbf9;
     padding: 40px;
     display: inline-block;
     width: 100%;
@@ -118,7 +109,7 @@ tr{
 }
 
 .form-content h3 {
-    color: black;
+    color: #fdfbf9;
     text-align: center;
     font-size: 28px;
     font-weight: 600;
@@ -130,7 +121,7 @@ tr{
 }
 
 .form-content p {
-    color: black;
+    color: #fdfbf9;
     text-align: center;
     font-size: 17px;
     font-weight: 300;
@@ -138,107 +129,105 @@ tr{
     margin-bottom: 30px;
 }
 
-
 .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
-    color: black;
+    color: #fdfbf9;
 }
 
-.form-content input[type=text], .form-content input[type=file], .form-content input[type=password], .form-content input[type=email], .form-content select {
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=file], .form-content input[type=email], .form-content select {
     width: 100%;
     padding: 9px 20px;
     text-align: left;
-    border: 1px solid black;
+    border: 0;
     outline: 0;
     border-radius: 6px;
-    background-color: white;
+    background-color: #ec698f;
     font-size: 15px;
     font-weight: 300;
-    color: black;
+    color: #fdfbf9;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     margin-top: 8px;
 }
 
-
 .btn-main{
     margin: 0 auto;
-    background-color: whitesmoke;
-    color: black;
-    outline: none;
-    border: 1px solid black;
-    box-shadow: none;
-}
-.btn-main:hover{
-    background-color: black;
-    color: white;
-    outline: none;
-    box-shadow: none;
-}
-
-.btn-admin{
-    margin: 0 auto;
-    background-color: whitesmoke;
-    color: black;
-    outline: none;
-    border: 1px solid black;
-    box-shadow: none;
-}
-
-btn-admin:hover{
-    background-color: whitesmoke;
-}
-
-.btn-danger{
-    margin: 0 auto;
-    background-color: red;
+    background-color: #ec698f;
+    color: #fdfbf9;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
+.btn-main:hover{
+    background-color: #ffe4ef;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+    color: #fdfbf9;
+}
 
-.btn-second:hover{
-    background-color: black;
-    color: whitesmoke;
+.btn-admin{
+    margin: 0 auto;
+    background-color: #ff95b5;
+    color: #fdfbf9;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+}
+
+.btn-admin:hover{
+    background-color: #ffcddf
+}
+
+.btn-danger{
+    margin: 0 auto;
+    background-color: #f55c7a;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
 }
 
 .btn-second{
     margin: 0 auto;
-    background-color: white;
-    color: #212529;
+    background-color: #fdfbf9;
+    color: #ff95b5;
     outline: none;
-    border: 1px solid black;
+    border: 0px;
     box-shadow: none;
+}
+
+.btn-second:hover{
+    background-color: #ffe4ef;
+    color: #ff95b5;
 }
 
 .btn-alternative{
     margin: 0 auto;
-    background-color: #a9a9a9;
-    color: #212529;
+    background-color: #f3cfce;
+    color: #ff95b5;
     outline: none;
     border: 0px;
     box-shadow: none;
 }
 
 .btn-alternative:hover{
-	background-color: #808080;
-	color: white;
-}
-
-.btn-dropdown:hover{
-    background-color: black;
-    color: whitesmoke;
+    background-color: #fef4d7;
+    color: #fdfbf9;
 }
 
 .btn-dropdown{
     margin: 0 auto;
-    background-color: white;
-    color: #212529;
+    background-color: #fdfbf9;
+    color: #ff95b5;
     outline: none;
-    border: 1px solid black;
+    border: 0px;
     box-shadow: none;
 }
 
+.btn-dropdown:hover {
+    background-color: #fdfbf9;
+    color: #ff95b5;
+}
 
 .form-content textarea {
     position: static;
@@ -246,11 +235,11 @@ btn-admin:hover{
     padding: 8px 20px;
     border-radius: 6px;
     text-align: left;
-    background-color: whitesmoke;
+    background-color: #ec698f;
     border: 0;
     font-size: 15px;
     font-weight: 300;
-    color:  black;
+    color:  #fdfbf9;
     outline: none;
     resize: none;
     -webkit-transition: none;
@@ -258,9 +247,10 @@ btn-admin:hover{
     margin-bottom: 14px;
     margin-top: 8px;
 }
+
 .form-content textarea:focus {
-    background-color:  whitesmoke;
-    color:  black;
+    background-color:  #ec698f;
+    color:  #fdfbf9;
 }
 
 
@@ -273,35 +263,33 @@ btn-admin:hover{
 }
 
 ::placeholder{
-	color: black;
+    color: #fdfbf9;
 }
 
 input[type=file]::file-selector-button {
-    background-color: whitesmoke;
-    color: #212529;
+    background-color: #fdfbf9;
+    color: #ec698f;
 }
 
 .backgroundArticle{
-    background-color: whitesmoke;
-    border: 1px solid black;
+    background-color: #ff95b5;
+    border: 1px solid #fdfbf9;
     border-radius: 4px;
 }
-
 
 /*user*/
 
 .myProfile{
-    background-color: black;
+    background-color: #fdfbf9;
     text-align: center;
-    color: whitesmoke;
+    vertical-align: center;
+    color: #ff95b5;
 }
 
 .profileImage{
     width: 300px;
     height: 300px;
-    margin-right: 10px;
-    margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid #fdfbf9;
 }
 
 .containerProfileImage{
@@ -314,71 +302,76 @@ input[type=file]::file-selector-button {
 
     margin-top: 10px;
     border-radius: 4px;
-    background-color: white;
+    background-color: #ec698f;
     padding: 10px;
-    border-collapse: separate;
-    border: 1px solid black;
-
+    border: 1px solid #fdfbf9;
+    width:100%;
 }
 
 .setBackGroundFavoritesDiv{
-    background-color: whitesmoke;
+    background-color: #ec698f;
     border: none;
 }
 
 .setPositionFavoritesDiv{
 
     text-align: center;
-    background-color: whitesmoke;
-    color: black;
+    background-color: #ec698f;
+    color: #fdfbf9;
     border: 2px solid;
     margin-top: 15px;
     border-radius: 4px;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: #fdfbf9;
 }
 
 a:hover{
-    color: lightskyblue;
+    color:#fdfbf9 ;
 }
 
 .submitButton{
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+    background-color: #ec698f;
+    border: 1px solid #fdfbf9;
+    color:#fdfbf9 ;
 }
+
 .alignmentFavorite{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .setBorderArticleHome{
-    border: 1px solid black;
+    border: 1px solid #fdfbf9;
+}
+
+tr{
+    border-bottom: 1px solid #fdfbf9;
 }
 
 .text-nav{
-    color: #212529;;
+    color: #fdfbf9;
 }
 
 .text-nav:hover{
-    color: black;
+    color: #ffe4ef;
 }
 
 .searchBar{
-    background-color: white;
-    color: black;
+    background-color: #ff95b5;
+    color: #fdfbf9;
 }
 
 .searchBar:focus{
-    background-color: white;
+    background-color: #ff95b5;
     box-shadow: none;
-    color: black;
+    color: #fdfbf9;
 }
 
 .searchBar::placeholder{
-    color: #32363a;
+    color: #fdfbf9;
 }
 
 .searchBar::-webkit-search-cancel-button{
@@ -386,20 +379,38 @@ a:hover{
 }
 
 .bg-nav {
-	background-color: white;
+    background-color: #ec698f;
+}
+
+.btn:focus, .btn:active {
+    outline:none;
+    box-shadow: none;
 }
 
 .disappear {
-	border:none;
-	background-color: inherit;
+    border:none;
+    background-color: inherit;
 }
 
 .iconColor {
-	color:  black;
+    color:  #fdfbf9;
 }
 
-.iconLight {
-	display:none;
+.iconDark {
+    display:none;
+}
+
+.dropdown-menu.show {
+	background-color: #f1adb9;
+}
+
+.dropdown-item {
+	color: #fdfbf9;
+}
+
+.dropdown-item:hover {
+	background-color: #ec698f;
+	color: #fdfbf9;
 }
 
 .checkBox{
@@ -407,28 +418,28 @@ a:hover{
     height: 20%;
     margin: auto;
     vertical-align: middle;
-    border: 3px solid black;
+    border: 3px solid #e58087;
     border-radius: 4px;
     position: fixed;
     z-index:60;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: #F5F5F5;
+    background-color: #fef4d7;
 }
 
 .checkBoxFixed{
     text-align: center;
-    color: #212529;
+    color: #f1adb9;
 }
 
 .container.mw-100 {
-	background-color: #ffffff;
+	background-color: #ec698f;
 }
 
 .line {
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #fdfbf9;
 }

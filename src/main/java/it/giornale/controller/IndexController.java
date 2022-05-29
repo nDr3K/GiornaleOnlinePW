@@ -20,8 +20,9 @@ public class IndexController
 	private ArticleService articleService;
 	
 	@GetMapping
-	public String getPage(Model model)
+	public String getPage(Model model, HttpSession session)
 	{
+		
 		model.addAttribute("articles", articleService.readLastTen());
 		return "index";
 	}

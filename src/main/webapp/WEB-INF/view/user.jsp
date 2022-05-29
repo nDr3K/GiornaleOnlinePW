@@ -44,8 +44,8 @@
 			                    <option value="light">Light</option>
 			                    <option value="dark">Dark</option>
 			                    <option value="prof">Prof</option>
-			                    <option value="beige">Beige</option>
-			                    <option value="gray">Gray</option>
+			                    <option value="blue">Blue</option>
+			                    <option value="pastel">Pastel</option>
 			                </select>
 			                <div class="row">
 								<div class="col-12 text-center">
