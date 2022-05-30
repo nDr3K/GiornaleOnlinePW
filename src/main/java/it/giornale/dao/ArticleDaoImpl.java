@@ -75,7 +75,6 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Override
 	public List<Article> readLastTen() 
 	{
-		//return manager.createNativeQuery("SELECT * FROM lastarticles").getResultList();
 		return manager.createQuery("SELECT a FROM Article a WHERE a.visible = false ORDER BY a.date desc").setMaxResults(10).getResultList();
 	}
 }

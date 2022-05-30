@@ -16,47 +16,47 @@
   </definition>
   
    <definition name="categories" extends="baseLayout">
-    <put-attribute name="title" value="Categories" />
+    <put-attribute name="title" value="Categorie" />
     <put-attribute name="content" value="/WEB-INF/view/categories.jsp" />
    </definition>
   
   <definition name="registration" extends="baseLayout">
-    <put-attribute name="title" value="New Registration" />
+    <put-attribute name="title" value="Registrati" />
     <put-attribute name="content" value="/WEB-INF/view/registration.jsp" />
   </definition>
 
 	<definition name="article" extends="baseLayout">
-	    <put-attribute name="title" value="Article" />
+	    <put-attribute name="title" value="Articolo" />
 	    <put-attribute name="content" value="/WEB-INF/view/article.jsp" />
 	</definition>  
 	  
 	 <definition name="admin" extends="baseLayout">
-	    <put-attribute name="title" value="Admin" />
+	    <put-attribute name="title" value="Pannello amministratore" />
 	    <put-attribute name="content" value="/WEB-INF/view/admin.jsp" />
 	 </definition>  
 	 
 	 <definition name="login" extends="baseLayout">
-	    <put-attribute name="title" value="Login" />
+	    <put-attribute name="title" value="Accedi" />
 	    <put-attribute name="content" value="/WEB-INF/view/login.jsp" />
 	 </definition>  
 	 
 	 <definition name="user" extends="baseLayout">
-	    <put-attribute name="title" value="User" />
+	    <put-attribute name="title" value="Il mio account" />
 	    <put-attribute name="content" value="/WEB-INF/view/user.jsp" />
 	 </definition>  
 	 
 	 <definition name="categoryform" extends="baseLayout">
-	    <put-attribute name="title" value="CategoryForm" />
+	    <put-attribute name="title" value="Form categorie" />
 	    <put-attribute name="content" value="/WEB-INF/view/categoryform.jsp" />
 	 </definition> 
 	 
 	 <definition name="articleform" extends="baseLayout">
-	    <put-attribute name="title" value="ArticleForm" />
+	    <put-attribute name="title" value="From articoli" />
 	    <put-attribute name="content" value="/WEB-INF/view/articleform.jsp" />
 	 </definition> 
 	  
 	 <definition name="articles" extends="baseLayout">
-	    <put-attribute name="title" value="Articles" />
+	    <put-attribute name="title" value="Articoli" />
 	    <put-attribute name="content" value="/WEB-INF/view/articles.jsp" />
 	 </definition> 
 	 

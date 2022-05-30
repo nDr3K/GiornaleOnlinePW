@@ -45,13 +45,14 @@ public class UserController
 	
 	//cambio email
 	@PostMapping("/changemail")
-	public String changeMail(@RequestParam("mail") String mail, @RequestParam("id") String id)
+	public String changeMail(@RequestParam("mail") String mail, @RequestParam("id") String id, HttpSession session)
 	{
 		if (mail.matches("\\b[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]{2,4}\\b"))
 		{
 			User user = userService.readById(Integer.parseInt(id));
 			user.setMail(mail);
 			userService.modifyUser(user);
+			session.setAttribute("passwordSuccess", true);
 		}
 		return "redirect:/user?id="+id;
 	}
@@ -61,7 +62,7 @@ public class UserController
 	public String changePassword(@RequestParam("passwordCorrente") String passwordCorrente,
 								 @RequestParam("passwordNuova") String passwordNuova,
 								 @RequestParam("passwordConferma") String passwordConferma,
-							     @RequestParam("id") String id, Model model)
+							     @RequestParam("id") String id, Model model, HttpSession session)
 	{
 		
 		if (!passwordConferma.equals(passwordNuova))
@@ -85,6 +86,7 @@ public class UserController
 			notMatches = false;
 			user.setPassword(passwordEncoder.encode(passwordNuova));
 			userService.modifyUser(user);
+			session.setAttribute("passwordSuccess", true);
 		}
 		else 
 		{
@@ -142,6 +144,20 @@ public class UserController
 		model.addAttribute("weak", weak);
 		model.addAttribute("notSame", notSame);
 		model.addAttribute("notMatches", notMatches);
+		return "redirect:/user?id="+id;
+	}
+	
+	@GetMapping("/password")
+	public String dismissPasswordMessage(@RequestParam("id") String id, HttpSession session)
+	{
+		session.setAttribute("passwordSuccess", false);
+		return "redirect:/user?id="+id;
+	}
+	
+	@GetMapping("/mail")
+	public String dismissMailMessage(@RequestParam("id") String id, HttpSession session)
+	{
+		session.setAttribute("mailSuccess", false);
 		return "redirect:/user?id="+id;
 	}
 }

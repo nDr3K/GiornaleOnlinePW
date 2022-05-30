@@ -5,6 +5,22 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <div class="myProfile"><h3>IL MIO PROFILO</h3></div>
+<c:if test="${sessionScope.mailSuccess}">
+	<div>
+		<div class="alert alert-success alert-dismissible mt-4" role="alert">
+			<span>Mail cambiata con successo</span>
+			<a href='<spring:url value="user/mail?id=${user.id}"/>' class="btn-close"></a>
+		</div>
+	</div>
+</c:if>
+<c:if test="${sessionScope.passwordSuccess}">
+	<div>
+		<div class="alert alert-success alert-dismissible mt-4" role="alert">
+			<span>Password cambiata con successo</span>
+			<a href='<spring:url value="user/password?id=${user.id}"/>' class="btn-close"></a>
+		</div>
+	</div>
+</c:if>
 <div class="container">
 	<div class="containerProfileImage">
 		<span><img class="profileImage mt-3" src='<spring:url value="${user.image}"/>'></span>
