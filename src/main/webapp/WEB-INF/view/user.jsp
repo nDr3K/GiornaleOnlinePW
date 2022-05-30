@@ -90,6 +90,9 @@
 				<div class="card">
 					<div class="card-body">
 						<table class="tableFavorite">
+							<c:if test="${articles.size() < 1}">
+								<span class="card-title">Non hai nessun articolo trai i preferiti</span>
+							</c:if>
 							<c:forEach items="${articles}" var="article">
 							<tr>
 								<td><a class="nav-link nav-link-white" href='<spring:url value="article?id=${article.id}"/>'>${article.title}</a></td>

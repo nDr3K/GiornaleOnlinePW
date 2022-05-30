@@ -49,7 +49,7 @@
 	    </div>
 	    <div class="card" style="max-width: 20%; margin: 20px; border-radius: 5px; border: 2px solid black">
 	        <div class="card-body">
-	            <div class="card-title"></div>
+	            <div class="card-title line"> Potrebbe interessanti anche...</div>
 	            <c:forEach items="${suggesteds}" var="suggested">
 	                <c:if test="${(suggested.id != article.id) && (!suggested.visible)}">
 	                    <a href='<spring:url value="/article?id=${suggested.id}"/>' class="nav-link nav-link-white">${suggested.title}</a><br>
