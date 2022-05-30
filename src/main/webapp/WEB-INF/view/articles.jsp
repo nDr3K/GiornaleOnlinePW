@@ -10,14 +10,16 @@
 				<div class="card-body">
 					<table class="table">
 						<c:forEach items="${articles}" var="article">
-							<tr>
-								<td width="75%">
-									<a href='<spring:url value="/article?id=${article.id}"/>' class="nav-link nav-link-white">${article.title}</a>
-								</td>
-								<td width="25%" align="right">
-									<span class="nav-link nav-link-white"><fmt:formatDate value="${article.date}" pattern = "dd-MM-yyyy"/></span>
-								</td>
-							</tr>
+							<c:if test="${!article.visible}">
+								<tr>
+									<td width="75%">
+										<a href='<spring:url value="/article?id=${article.id}"/>' class="nav-link nav-link-white">${article.title}</a>
+									</td>
+									<td width="25%" align="right">
+										<span class="nav-link nav-link-white"><fmt:formatDate value="${article.date}" pattern = "dd-MM-yyyy"/></span>
+									</td>
+								</tr>
+							</c:if>
 						</c:forEach>
 					</table>
 				</div>

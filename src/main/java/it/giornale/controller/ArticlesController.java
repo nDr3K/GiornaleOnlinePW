@@ -12,7 +12,7 @@ import it.giornale.service.ArticleService;
 
 @Controller
 @RequestMapping("/articles")
-public class articlesController {
+public class ArticlesController {
 	
 	@Autowired
 	private ArticleService articleService;

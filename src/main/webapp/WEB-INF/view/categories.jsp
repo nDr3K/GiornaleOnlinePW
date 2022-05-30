@@ -26,7 +26,7 @@
 				<div class="card-body">
 					<table class="table">
 						<c:forEach items="${articles}" var="article">
-							<c:if test="${article.category.id == category.id}">
+							<c:if test="${(article.category.id == category.id) && !article.visible}">
 								<tr>
 									<td width="75%">
 										<a href='<spring:url value="/article?id=${article.id}"/>' class="nav-link nav-link-white">${article.title}</a>

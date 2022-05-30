@@ -85,7 +85,7 @@ public class ArticleController {
 	@GetMapping("/remove")
 	public String removeFromFavorite(@RequestParam("id") String id, HttpSession session)
 	{
-		User user = (User) session.getAttribute("user");
+		User user = userService.readById(((User) session.getAttribute("user")).getId());
 		Article article = articleService.getArticleById(Integer.parseInt(id));
 
 		for (Article a : user.getFavorites())

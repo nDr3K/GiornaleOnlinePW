@@ -48,7 +48,7 @@ public class User implements Serializable
 	@Column(name = "image", nullable = false)
 	private String image;
 	
-	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = {CascadeType.REFRESH, CascadeType.MERGE}, fetch = FetchType.EAGER)
 	@JoinTable
 		(
 				name = "favorites",
