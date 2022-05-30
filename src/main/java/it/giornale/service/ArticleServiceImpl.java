@@ -49,11 +49,10 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public boolean checkData(String title, String author, String caption) 
+	public boolean checkData(String title, String author) 
 	{
-		if( Pattern.matches("[a-zA-Z-0-9אטלעש\\s'.,!?:-]{1,255}", title) &&
-			Pattern.matches("[a-zA-Zאטלעש\\s']{1,255}", author) &&
-			Pattern.matches("[a-zA-Z-0-9-אטלעש\\s'().,:_!?;-]{1,}", caption))
+		if( Pattern.matches("[a-zA-Z0-9אטילעש\\s':.,!?-]{1,255}", title) &&
+			Pattern.matches("[a-zA-Zאטלעש\\s']{1,255}", author))
 		return true;
 		return false;
 	}

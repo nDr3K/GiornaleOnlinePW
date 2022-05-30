@@ -10,7 +10,7 @@
 				<div class="form-items">
 					<h3>${id > 0 ? 'Modifica Articolo' : 'Inserisci Articolo'}</h3>
 					<p>Compila i campi sottostanti</p>
-					<form method="POST" action="articleform/savearticle" accept-charset="ISO-8859-1" enctype="multipart/form-data">
+					<form method="POST" action="articleform/savearticle" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-6">
 							<input type="hidden" value="${id}" name="id"/>

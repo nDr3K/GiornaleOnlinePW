@@ -52,7 +52,7 @@ public class UserController
 			User user = userService.readById(Integer.parseInt(id));
 			user.setMail(mail);
 			userService.modifyUser(user);
-			session.setAttribute("passwordSuccess", true);
+			session.setAttribute("mailSuccess", true);
 		}
 		return "redirect:/user?id="+id;
 	}

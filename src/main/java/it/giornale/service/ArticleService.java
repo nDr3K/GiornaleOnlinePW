@@ -10,7 +10,7 @@ public interface ArticleService {
 	void update(Article a);
 	void delete(Article a);
 	Article getArticleById(int id);
-	boolean checkData(String title, String author, String caption);
+	boolean checkData(String title, String author);
 	int getNext(int id);
 	int getPrevious(int id);
 	List<Article> readLastTen();

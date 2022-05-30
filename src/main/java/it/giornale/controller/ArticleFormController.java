@@ -55,7 +55,7 @@ public class ArticleFormController {
 	
 	
 	@PostMapping("/savearticle")
-	public String articleCreate(@RequestParam("id") int id,
+	public String articleCreate(@RequestParam("id") String id,
 								@RequestParam("title") String title,
 								@RequestParam("author") String author,
 								@RequestParam("category") String category,
@@ -63,24 +63,24 @@ public class ArticleFormController {
 								@RequestParam("caption") String caption,
 								@RequestParam("content") String content,
 								@RequestParam("imageLink") String imageLink,
-								@RequestParam(name = "image") MultipartFile image,
+								@RequestParam("image") MultipartFile image,
 								HttpSession session
 								) 
 	{
 		
 		Article article;
 		Category c = categoryService.readById(Integer.parseInt(category));
-		if (id == 0) 
+		if (id.equals("0")) 
 		{
 			article = new Article();
 			article.setDate(new Date());
 		}
-		else article = articleService.getArticleById(id);
+		else article = articleService.getArticleById(Integer.parseInt(id));
 		
 		article.setCategory(c);
 		article.setImage(imageLink);
 		
-		if(articleService.checkData(title,author,caption))
+		if(articleService.checkData(title,author))
 		{
 			article.setTitle(title);
 			article.setAuthor(author);
@@ -90,7 +90,7 @@ public class ArticleFormController {
 		}
 		else 
 		{
-			return "redirect:/articleform?id?="+id;
+			return "redirect:/articleform?id="+id;
 		}
 		
 		 if (mode) {
