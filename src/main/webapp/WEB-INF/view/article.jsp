@@ -15,7 +15,7 @@
 	                </div>
 	                <div class="row g-0">
 	                    <div class="col-md-11" style="text-align: left; margin: 20px">
-	                    	<img src='<spring:url value="${article.image}"/>' style="margin:5px" align="right" class="img-fluid rounded-start" alt="...">
+	                    	<img src='<spring:url value="${article.image}"/>' style="margin:5px; max-width:40%" align="right" class="img-fluid rounded-start" alt="...">
 	                       	<span class="card-text nav-link-white">${article.content}</span>
 	                    </div>
 	                    <hr>

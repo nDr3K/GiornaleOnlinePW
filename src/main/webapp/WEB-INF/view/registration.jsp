@@ -16,7 +16,7 @@
 							<form:input path="username" id="username" type="text" cssClass="form-control" required="required" placeholder="Username"/>
 							<form:errors path="username" id="usernameError" cssClass="text-danger" />
 							<c:if test="${userExist}">
-								<span>Nome utente gia preso</span>
+								<span class="text-danger">Nome utente gia preso</span>
 							</c:if>
 						</div>
 						<div class="col-md-12">
@@ -24,7 +24,7 @@
 							<form:input path="mail" id="mail" type="email" cssClass="form-control" required="required" placeholder="Indirizzo E-Mail" />
 							<form:errors path="mail" id="mailError" cssClass="text-danger" />
 							<c:if test="${mailExist}">
-								<span>Mail gia registrata</span>
+								<span class="text-danger">Mail gia registrata</span>
 							</c:if>
 						</div>
 						<div class="col-md-12">
