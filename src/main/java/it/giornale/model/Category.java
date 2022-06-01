@@ -30,7 +30,7 @@ public class Category implements Serializable
 	private String description;
 	
 	
-	@OneToMany(mappedBy = "category", cascade = CascadeType.MERGE, fetch = FetchType.EAGER, orphanRemoval = true)
+	@OneToMany(mappedBy = "category", cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, orphanRemoval = false)
 	private List<Article> articles = new ArrayList<>();
 
 	public int getId() {

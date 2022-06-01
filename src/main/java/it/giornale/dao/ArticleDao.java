@@ -14,4 +14,5 @@ public interface ArticleDao {
 	int getNext(int id);
 	int getPrevious(int id);
 	List<Article> readLastTen();
+	boolean isCategoryEmpty(int id);
 }

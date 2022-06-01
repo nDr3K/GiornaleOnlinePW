@@ -77,4 +77,13 @@ public class ArticleDaoImpl implements ArticleDao {
 	{
 		return manager.createQuery("SELECT a FROM Article a WHERE a.visible = false ORDER BY a.date desc").setMaxResults(10).getResultList();
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean isCategoryEmpty(int id) 
+	{
+		List<Article> articles = manager.createNativeQuery("SELECT category_id FROM articles WHERE category_id = " + id).getResultList();
+		if (articles.size() > 0) return false;
+		return true;
+	}
 }

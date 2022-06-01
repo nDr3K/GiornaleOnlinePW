@@ -63,9 +63,16 @@ public class AdminController
 	
 	//cancella categorie
 	@GetMapping("/deletecategory")
-	public String deleteCategory(@RequestParam("id") String id)
+	public String deleteCategory(@RequestParam("id") String id, HttpSession session)
 	{
-		categoryService.remove(categoryService.readById(Integer.parseInt(id)));
+		if (articleService.isCategoryEmpty(Integer.parseInt(id)))
+		{
+			categoryService.remove(categoryService.readById(Integer.parseInt(id)));
+		}
+		else 
+		{
+			session.setAttribute("notEmpty", true);
+		}
 		return "redirect:/admin";
 	}
 	
@@ -117,5 +124,12 @@ public class AdminController
 		
 		articleService.update(article);
 		return "redirect:/admin";	
+	}
+	
+	@GetMapping("/categoryError")
+	public String dismissCategoryError(HttpSession session)
+	{
+		session.setAttribute("notEmpty", false);
+		return "redirect:/admin";
 	}
 }

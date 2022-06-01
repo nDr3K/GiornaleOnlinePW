@@ -7,14 +7,16 @@
 </div>
 
 <nav class="p-3 bg-nav">
-	<div class="container">
+	<div class="d-flex">
+	<div style="width:13%"></div>
+	<div style="width:74%">
 		<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
 			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 align-items-center">
 				<li><img src="<spring:theme code='styleIcon'/>" style="margin-right:20px"/></li>
 				<li><a class="nav-link text-nav px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/"/>'>Home</a></li>
 				<li><a class="nav-link text-nav px-2" style="font-size:20px; margin-left:8px" href='<spring:url value="/categories?id=0"/>'>Categories</a></li>
 			</ul>
-			<form class="d-flex col-10 col-lg-auto mb-lg-0 me-lg-4" action="articles" method="GET">
+			<form class="d-flex col-12 col-lg-auto mb-lg-0 me-lg-4" action="articles" method="GET">
 				<input type="search" class="form-control searchBar" name="searchText" placeholder="Ricerca..." aria-label="Ricerca">
 				<input class="btn btn-second" type="submit" value="Cerca"/>
 			</form>
@@ -48,6 +50,10 @@
 				</form>
 			</div>
 		</div>
+	</div>
+	<c:if test="${sessionScope.user != null}">
+		<div style="width:13%;text-align:right"><h4 style="padding-top:10px">Benvenuto ${sessionScope.user.username}</h4></div>
+	</c:if>
 	</div>
 </nav>
 

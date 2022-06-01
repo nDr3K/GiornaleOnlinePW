@@ -8,6 +8,9 @@
 <div class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px">
 			<div class="card">
 				<div class="card-body">
+					<c:if test="${!author.isEmpty()}">
+						<h4 class="card-text line" style="text-align:center; margin-bottom: 5px">${author}</h4>
+					</c:if>
 					<table class="table">
 						<c:forEach items="${articles}" var="article">
 							<c:if test="${!article.visible}">

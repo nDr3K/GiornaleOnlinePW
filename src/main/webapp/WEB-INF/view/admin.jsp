@@ -71,6 +71,14 @@
 			</div>
 		</div>
 	</div>
+	<c:if test="${sessionScope.notEmpty}">
+	<div>
+		<div class="alert alert-danger alert-dismissible mt-4" role="alert">
+			<span>Non puoi cancellare la categoria se ci sono degli articoli relazionati</span>
+			<a href='<spring:url value="admin/categoryError"/>' class="btn-close"></a>
+		</div>
+	</div>
+</c:if>
 	<div id="categories" class="row row-cols-1 row-cols-md-1 g-4" style="margin-left: 150px; margin-right: 150px; border-radius: 5px; display:none">
 		<div class="card">
 			<div class="card-body">

@@ -32,6 +32,7 @@ public class ArticlesController {
 			{
 				model.addAttribute("articles", articleService.searchByAuthor(author));
 				model.addAttribute("currentPath", "articles?author="+author);
+				model.addAttribute("author", author);
 			}
 			
 		return "articles";

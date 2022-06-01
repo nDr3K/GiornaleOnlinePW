@@ -18,4 +18,5 @@ public interface ArticleService {
 	List<Article> searchByTitle(String title);
 	List<Article> searchByAuthor(String author);
 	List<Article> searchByKeywords(String keyword);
+	boolean isCategoryEmpty(int id);
 }

@@ -126,5 +126,11 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		return list;
 	}
+
+	@Override
+	public boolean isCategoryEmpty(int id) 
+	{
+		return articleDao.isCategoryEmpty(id);
+	}
 	
 }

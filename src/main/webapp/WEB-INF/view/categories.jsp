@@ -9,7 +9,7 @@
 			<div class="col">
 				<div class="card h-100">
 					<div class="card-body">
-						<button class="btn formatButtonCategory" type="button" onclick="showElements(${category.id})">${category.description}</button>
+						<button class="btn formatButtonCategory" type="button" onclick="showElements(${category.id})"><h4>${category.description}</h4></button>
 						<c:if test="${mode}">
 							<script>
 							window.onload = function() {
